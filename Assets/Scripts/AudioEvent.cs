@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClickEvent : MonoBehaviour
+public class AudioEvent : MonoBehaviour
 {
     public Text text1;
     public Text text2;

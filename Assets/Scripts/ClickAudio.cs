@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OnClickAudio : MonoBehaviour
+public class ClickAudio : MonoBehaviour
 {
     public AudioSource audio1;
     public AudioSource audio2;

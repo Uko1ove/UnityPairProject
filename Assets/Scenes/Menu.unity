@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio1: {fileID: 997686759}
-  audio2: {fileID: 1115959593}
+  audio2: {fileID: 0}
 --- !u!1 &997686757
 GameObject:
   m_ObjectHideFlags: 0

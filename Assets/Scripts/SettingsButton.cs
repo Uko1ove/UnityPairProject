@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OnClickSettings : MonoBehaviour
+public class SettingsButton : MonoBehaviour
 {
     public GameObject go1;
     public GameObject go2;
