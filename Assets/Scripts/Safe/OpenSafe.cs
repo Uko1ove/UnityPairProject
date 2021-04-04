@@ -9,12 +9,17 @@ public class OpenSafe : MonoBehaviour
     public Text num2;
     public Text num3;
     public Text num4;
-    void Update()
+    public GameObject HandleRotate;
+
+    public void Open()
     {
         if (num1.text == "1" && num2.text == "0" && num3.text == "0" && num4.text == "0")
         {
-            Animator anim = GetComponent<Animator>();
-            anim.enabled = true;
+            Animator anim1 = GetComponent<Animator>();
+            anim1.enabled = true;
+
+            Animator anim2 = HandleRotate.GetComponent<Animator>();
+            anim2.enabled = true;
         }
 
 
