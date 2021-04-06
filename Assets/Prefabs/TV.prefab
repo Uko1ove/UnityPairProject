@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 4079876425393604076}
   - component: {fileID: 4079876425393604072}
   - component: {fileID: 4079876425393604073}
+  - component: {fileID: 2209160700410882084}
   m_Layer: 0
   m_Name: ButtonOnOff
   m_TagString: Untagged
@@ -483,6 +484,25 @@ MonoBehaviour:
   videoSource_0: {fileID: 4079876426172644595}
   videoPlayer_1: {fileID: 4079876425679886745}
   videoSource_1: {fileID: 4079876425141542957}
+--- !u!95 &2209160700410882084
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4079876425393604083}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2d84118455b25942aa626499176117c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4079876425679886745
 GameObject:
   m_ObjectHideFlags: 0

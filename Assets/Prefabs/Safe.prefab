@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 644831467688207939}
   - component: {fileID: 644831467688207949}
   m_Layer: 0
-  m_Name: Handle
+  m_Name: HandleSafe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2023,7 +2023,7 @@ GameObject:
   - component: {fileID: 1527792526471729673}
   - component: {fileID: 1028794943}
   m_Layer: 0
-  m_Name: Door
+  m_Name: SafeDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
