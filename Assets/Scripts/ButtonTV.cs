@@ -8,6 +8,7 @@ public class ButtonTV : MonoBehaviour
     public GameObject videoSource_0;
     public GameObject videoPlayer_1;
     public GameObject videoSource_1;
+    public GameObject go1;
     private bool remote = false;
     private Animator anim1;
 
@@ -16,6 +17,7 @@ public class ButtonTV : MonoBehaviour
         anim1 = GetComponent<Animator>();
         anim1.enabled = true;
 
+        if (go1.activeInHierarchy == true) remote = true;
         //сделать кнопку вкл ТВ меньше в продакшэне
         //получение в bool наличия пульта
 
