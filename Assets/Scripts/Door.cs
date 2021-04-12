@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Door : MonoBehaviour
 {
     public GameObject HandleRotate;
+    public GameObject FullDoor;
     public AudioSource audio1;
     public AudioSource audio2;
     public AudioSource audio3;
@@ -19,10 +20,16 @@ public class Door : MonoBehaviour
         {
             anim1 = GetComponent<Animator>();
             anim1.enabled = true;
+
             but1 = GetComponent<Button>();
             but1.enabled = false;
+
+
+
+            float fdtrey = FullDoor.transform.rotation.eulerAngles.y;
             float trey = transform.rotation.eulerAngles.y;
-            if ( trey < 181 && transform.rotation.eulerAngles.y > 179)
+
+            if ( trey < fdtrey + 1 && trey > fdtrey - 1)
                 audio2.Play();
             else audio3.Play();
         }
@@ -37,8 +44,10 @@ public class Door : MonoBehaviour
     }
     void Stop()
     {
-        //anim2.enabled = false;
-        anim1.enabled = false;
+        if (anim1.enabled == true)
+            anim1.enabled = false;
+        else anim2.enabled = false;
+
         but1.enabled = true;
     }
 }
