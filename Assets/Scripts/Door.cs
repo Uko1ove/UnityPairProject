@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     public AudioSource audio3;
     Animator anim1;
     Animator anim2;
+    Button but1;
 
     public void Open()
     {
@@ -18,6 +19,8 @@ public class Door : MonoBehaviour
         {
             anim1 = GetComponent<Animator>();
             anim1.enabled = true;
+            but1 = GetComponent<Button>();
+            but1.enabled = false;
             float trey = transform.rotation.eulerAngles.y;
             if ( trey < 181 && transform.rotation.eulerAngles.y > 179)
                 audio2.Play();
@@ -36,5 +39,6 @@ public class Door : MonoBehaviour
     {
         //anim2.enabled = false;
         anim1.enabled = false;
+        but1.enabled = true;
     }
 }
