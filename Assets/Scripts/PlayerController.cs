@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private float playerSpeed = 10f;
-    private float mouseSpeed = 100f;
+    private float mouseSpeed = 2000f;
     private float horizontal;
     private float vertical;
     private float mouseX;
