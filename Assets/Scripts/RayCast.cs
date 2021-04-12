@@ -10,20 +10,26 @@ public class RayCast : MonoBehaviour
 
     void Update()
     {
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(transform.position, ray.direction * rayDistance);
      
+        /*
         if (Physics.Raycast(ray, rayDistance))
-        {
+        {     
             RaycastHit hit;
             Physics.Raycast(ray, out hit);
-
+            
             if (hit.collider.gameObject.tag == "object")
             {
-                Button but1;
-                but1 = hit.collider.gameObject.GetComponent<Button>();
-                but1.enabled = true;
-            }
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Button but1;
+                    but1 = hit.collider.gameObject.GetComponent<Button>();
+                    but1.enabled = true;
+                }
+            }    
         }
+        */
     }
 }

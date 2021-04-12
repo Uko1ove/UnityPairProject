@@ -24,8 +24,6 @@ public class Door : MonoBehaviour
             but1 = GetComponent<Button>();
             but1.enabled = false;
 
-
-
             float fdtrey = FullDoor.transform.rotation.eulerAngles.y;
             float trey = transform.rotation.eulerAngles.y;
 
@@ -47,7 +45,6 @@ public class Door : MonoBehaviour
         if (anim1.enabled == true)
             anim1.enabled = false;
         else anim2.enabled = false;
-
         but1.enabled = true;
     }
 }
