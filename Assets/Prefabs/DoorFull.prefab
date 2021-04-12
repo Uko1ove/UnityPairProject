@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 7422178631810695458}
   - component: {fileID: 7422178631810695461}
   m_Layer: 0
-  m_Name: Door
+  m_Name: DoorFlat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -799,6 +799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HandleRotate: {fileID: 7422178633156297773}
+  FullDoor: {fileID: 0}
   audio1: {fileID: 889851648}
   audio2: {fileID: 102093534}
   audio3: {fileID: 1222922890}
