@@ -485,6 +485,7 @@ MonoBehaviour:
   videoSource_0: {fileID: 4079876426172644595}
   videoPlayer_1: {fileID: 4079876425679886745}
   videoSource_1: {fileID: 4079876425141542957}
+  go1: {fileID: 0}
 --- !u!95 &2209160700410882084
 Animator:
   serializedVersion: 3

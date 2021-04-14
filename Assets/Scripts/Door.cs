@@ -10,13 +10,25 @@ public class Door : MonoBehaviour
     public AudioSource audio1;
     public AudioSource audio2;
     public AudioSource audio3;
+    public GameObject Key;
     Animator anim1;
     Animator anim2;
     Button but1;
+    bool trigger;
 
     public void Open()
     {
-        if (true)
+        trigger = false;
+        switch (FullDoor.tag)
+            {
+                case "final_door":
+                    if (Key.activeInHierarchy == true) trigger = true;
+                    break;
+                case "simple_door":
+                    trigger = true;
+                    break;
+            }
+        if (trigger)
         {
             anim1 = GetComponent<Animator>();
             anim1.enabled = true;
@@ -42,7 +54,7 @@ public class Door : MonoBehaviour
     }
     void Stop()
     {
-        if (anim1.enabled == true)
+        if (trigger)
             anim1.enabled = false;
         else anim2.enabled = false;
         but1.enabled = true;
