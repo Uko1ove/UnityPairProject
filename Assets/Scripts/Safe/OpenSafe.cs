@@ -9,6 +9,7 @@ public class OpenSafe : MonoBehaviour
     public Text num2;
     public Text num3;
     public Text num4;
+    public AudioSource audio1;
     public GameObject HandleRotate;
 
     public void Open()
@@ -20,7 +21,9 @@ public class OpenSafe : MonoBehaviour
 
             Animator anim2 = HandleRotate.GetComponent<Animator>();
             anim2.enabled = true;
-        }
+
+            audio1.Play();
+}
 
 
     }
