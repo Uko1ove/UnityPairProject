@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OpenSafe : MonoBehaviour
+public class OpenSafe : MonoBehaviour, IInteractable
 {
     public Text num1;
     public Text num2;
@@ -12,6 +12,10 @@ public class OpenSafe : MonoBehaviour
     public AudioSource audio1;
     public GameObject HandleRotate;
 
+    public void Interact()
+    {
+        Open();
+    }
     public void Open()
     {
         if (num1.text == "1" && num2.text == "0" && num3.text == "0" && num4.text == "0")
@@ -23,8 +27,6 @@ public class OpenSafe : MonoBehaviour
             anim2.enabled = true;
 
             audio1.Play();
-}
-
-
+        }
     }
 }
