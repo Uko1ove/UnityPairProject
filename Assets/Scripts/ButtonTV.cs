@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonTV : MonoBehaviour
+public class ButtonTV : MonoBehaviour, IInteractable
 {
     public GameObject videoPlayer_0;
     public GameObject videoSource_0;
@@ -12,14 +12,17 @@ public class ButtonTV : MonoBehaviour
     private bool remote = false;
     private Animator anim1;
 
-    public void Play()
+    public void Interact()
+    {
+        Play();
+    }
+
+    void Play()
     {
         anim1 = GetComponent<Animator>();
         anim1.enabled = true;
 
         if (go1.activeInHierarchy == true) remote = true;
-        //сделать кнопку вкл ТВ меньше в продакшэне
-        //получение в bool наличия пульта
 
         Invoke("VideoPlay", 1);
     }
@@ -28,7 +31,7 @@ public class ButtonTV : MonoBehaviour
     {
         anim1.enabled = false;
 
-        switch (remote) //тут будет условие наличия пульта
+        switch (remote)
         {
             case false:
                 switch (videoPlayer_0.activeInHierarchy)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, IInteractable
 {
     public GameObject HandleRotate;
     public GameObject FullDoor;
@@ -13,10 +13,16 @@ public class Door : MonoBehaviour
     public GameObject Key;
     Animator anim1;
     Animator anim2;
-    Button but1;
     bool trigger;
 
-    public void Open()
+    public void Interact()
+    {
+        anim1 = GetComponent<Animator>();
+        anim2 = HandleRotate.GetComponent<Animator>();
+        if (anim1.enabled == false && anim2.enabled == false) Open();
+    }
+
+    void Open()
     {
         trigger = false;
         switch (FullDoor.tag)
@@ -30,11 +36,7 @@ public class Door : MonoBehaviour
             }
         if (trigger)
         {
-            anim1 = GetComponent<Animator>();
             anim1.enabled = true;
-
-            but1 = GetComponent<Button>();
-            but1.enabled = false;
 
             float fdtrey = FullDoor.transform.rotation.eulerAngles.y;
             float trey = transform.rotation.eulerAngles.y;
@@ -45,7 +47,6 @@ public class Door : MonoBehaviour
         }
         else
         {
-            anim2 = HandleRotate.GetComponent<Animator>();
             anim2.enabled = true;
             audio1.Play();
         }
@@ -57,6 +58,5 @@ public class Door : MonoBehaviour
         if (trigger)
             anim1.enabled = false;
         else anim2.enabled = false;
-        but1.enabled = true;
     }
 }
