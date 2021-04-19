@@ -20,5 +20,11 @@ public class RayCast : MonoBehaviour
             var interactComponent = hit.collider.GetComponent<IInteractable>();
             interactComponent.Interact();
         }
+
+        if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.tag == "ipad" && Input.GetMouseButtonDown(0) )
+        {
+            GameObject go1 = hit.collider.gameObject;
+
+        }
     }
 }
