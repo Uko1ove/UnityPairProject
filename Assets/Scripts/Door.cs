@@ -26,14 +26,14 @@ public class Door : MonoBehaviour, IInteractable
     {
         trigger = false;
         switch (FullDoor.tag)
-            {
-                case "final_door":
-                    if (Key.activeInHierarchy == true) trigger = true;
-                    break;
-                case "simple_door":
-                    trigger = true;
-                    break;
-            }
+        {
+            case "final_door":
+                if (Key.activeInHierarchy == true) trigger = true;
+                break;
+            case "simple_door":
+                trigger = true;
+                break;
+        }
         if (trigger)
         {
             anim1.enabled = true;
@@ -53,6 +53,7 @@ public class Door : MonoBehaviour, IInteractable
 
         Invoke("Stop", 2.01f);
     }
+
     void Stop()
     {
         if (trigger)

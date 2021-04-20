@@ -1788,6 +1788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09cd459a7a8dab345ab380a70a7a55ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  itemContainer: {fileID: 0}
   rayDistance: 4
 --- !u!114 &963194231
 MonoBehaviour:
@@ -2731,7 +2733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1278352217
 MonoBehaviour:
   m_ObjectHideFlags: 0

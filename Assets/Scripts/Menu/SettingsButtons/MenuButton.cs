@@ -7,7 +7,7 @@ public class MenuButton : MonoBehaviour
 {
     public void New()
     {
-        SceneManager.LoadScene("NewGame");
+        SceneManager.LoadScene("Game");
     }
     public void Continue()
     {
