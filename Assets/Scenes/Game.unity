@@ -5310,19 +5310,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 440928, guid: 9f78e8c3007d3dd46a0681fc1a4330da, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 440928, guid: 9f78e8c3007d3dd46a0681fc1a4330da, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 440928, guid: 9f78e8c3007d3dd46a0681fc1a4330da, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 440928, guid: 9f78e8c3007d3dd46a0681fc1a4330da, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 440928, guid: 9f78e8c3007d3dd46a0681fc1a4330da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5330,7 +5330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 440928, guid: 9f78e8c3007d3dd46a0681fc1a4330da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 440928, guid: 9f78e8c3007d3dd46a0681fc1a4330da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -8920,6 +8920,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cfecaf646d6b046ac634f1f6867ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1779132244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195884, guid: 9f78e8c3007d3dd46a0681fc1a4330da, type: 3}
+  m_PrefabInstance: {fileID: 922040625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1779132245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779132244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.65308297, y: 0.6376827, z: 0.20360553}
+  m_Center: {x: 0, y: 0.31884134, z: 0}
 --- !u!4 &1779132248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 440928, guid: 9f78e8c3007d3dd46a0681fc1a4330da, type: 3}
