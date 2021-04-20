@@ -30,7 +30,6 @@ public class TextIconClick : MonoBehaviour
                 fileText = PlayerPrefs.GetString("fileText");
                 textFile.GetComponent<InputField>().text = fileText;
                 textFileWrapper.SetActive(true);
-                
             }
             
             lastClickTime = Time.time;
