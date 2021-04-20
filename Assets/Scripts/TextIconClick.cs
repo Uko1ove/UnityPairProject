@@ -32,16 +32,8 @@ public class TextIconClick : MonoBehaviour
                 textFileWrapper.SetActive(true);
                 
             }
-            else
-            {
-                chekedImage.SetActive(true);
-                
-            }
-
+            
             lastClickTime = Time.time;
-        }
-        
+        }  
     }
-
-    
 }

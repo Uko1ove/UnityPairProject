@@ -7,6 +7,7 @@ TagManager:
   - object
   - final_door
   - simple_door
+  - ipad
   layers:
   - Default
   - TransparentFX
