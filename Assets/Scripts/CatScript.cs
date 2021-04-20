@@ -11,7 +11,7 @@ public class CatScript : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * cat_speed);
         Ray ray1 = new Ray(transform.position, transform.forward);
 
-        if (Physics.Raycast(ray1, 4))
+        if (Physics.Raycast(ray1, 2))
         {
             audio1.Play();
 
