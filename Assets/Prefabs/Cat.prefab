@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio1: {fileID: 7886086348361623485}
-  cat_speed: 10
+  cat_speed: 5
 --- !u!65 &1074280595
 BoxCollider:
   m_ObjectHideFlags: 0
