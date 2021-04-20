@@ -8,7 +8,7 @@ public class TextIconClick : MonoBehaviour
     [SerializeField] GameObject textFileWrapper;
     [SerializeField] GameObject textFile;
     [SerializeField] GameObject chekedImage;
-    private const float doubleCkilckTime = 0.16f;
+    private const float doubleCkilckTime = 0.2f;
     private float lastClickTime;
     public string fileText
     {
