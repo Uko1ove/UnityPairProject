@@ -35,9 +35,6 @@ public class LeftGameCoop : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Debug.Log(newPlayer.NickName + " entered room");
-        newPlayer.TagObject = "player_2";
-        GameObject go = GameObject.FindGameObjectWithTag("player_2");
-        Camera cam = go.GetComponent<Camera>();
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
