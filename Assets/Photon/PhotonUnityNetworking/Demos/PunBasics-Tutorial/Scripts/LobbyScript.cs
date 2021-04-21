@@ -16,6 +16,22 @@ public class LobbyScript : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
+    public void CreateRoom()
+    {
+        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions { MaxPlayers = 2 } );
+    }
+
+    public void JoinRoom()
+    {
+        PhotonNetwork.JoinRandomRoom();
+    }
+
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("Joined the room");
+        PhotonNetwork.LoadLevel("Game");
+    }
+
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to Server");
