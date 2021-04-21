@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,28 +26,33 @@ public class PlayerController : MonoBehaviour
     private Quaternion ipadRotation;
     private Vector3 ipadScale;
     private bool isScreenBlocked;
+    private PhotonView photonView;
 
     public bool isUsingSmartphone;
 
     // Start is called before the first frame update
     void Start()
     {
+        photonView = GetComponent<PhotonView>();
+
         isUsingSmartphone = false;
         ipadPosition = smartphone.transform.position;
         ipadRotation = smartphone.transform.rotation;
         ipadScale = smartphone.transform.localScale;
-        isScreenBlocked = true;
+        isScreenBlocked = true;   
     }
 
     void Update()
     {
+        if (!photonView.IsMine) return;
+
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
-        
-        if(isUsingSmartphone == false)
+
+        if (isUsingSmartphone == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed * vertical);
@@ -56,12 +62,10 @@ public class PlayerController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -30, 30);
             mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
         }
-        
-        
 
-        if(Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
         {
-            if(isScreenBlocked == true)
+            if (isScreenBlocked == true)
             {
                 screenOnLocked.SetActive(true);
                 slider.GetComponent<Slider>().value = 0;
@@ -70,7 +74,7 @@ public class PlayerController : MonoBehaviour
             isScreenBlocked = !isScreenBlocked;
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape) && isUsingSmartphone == true)
+        if (Input.GetKeyDown(KeyCode.Escape) && isUsingSmartphone == true)
         {
             smartphone.transform.parent = null;
             smartphone.transform.position = ipadPosition;
@@ -78,6 +82,8 @@ public class PlayerController : MonoBehaviour
             smartphone.transform.localScale = ipadScale;
             isUsingSmartphone = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space) )
+            PhotonNetwork.LeaveRoom();
     }
-    
-}
+}    
