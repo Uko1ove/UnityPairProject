@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         
         
 
-        if(Input.GetKeyDown("u") && isUsingSmartphone == true)
+        if(Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
         {
             if(isScreenBlocked == true)
             {
