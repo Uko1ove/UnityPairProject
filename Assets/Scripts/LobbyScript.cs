@@ -8,7 +8,7 @@ public class LobbyScript : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        PhotonNetwork.NickName = "Player_" + Random.RandomRange(0,2);
+        PhotonNetwork.NickName = "Player" + Random.Range(0,2);
         Debug.Log("Player's name is set to " + PhotonNetwork.NickName);
 
         PhotonNetwork.AutomaticallySyncScene = true;
@@ -16,14 +16,14 @@ public class LobbyScript : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
-    public void CreateRoom()
+    public override void OnConnectedToMaster()
     {
-        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions { MaxPlayers = 2 } );
+        Debug.Log("Connected to Server");
     }
 
-    public void JoinRoom()
+    public void CreateRoom()
     {
-        PhotonNetwork.JoinRandomRoom();
+        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions { MaxPlayers = 2 });
     }
 
     public override void OnJoinedRoom()
@@ -32,8 +32,8 @@ public class LobbyScript : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("Game");
     }
 
-    public override void OnConnectedToMaster()
+    public void JoinRoom()
     {
-        Debug.Log("Connected to Server");
+        PhotonNetwork.JoinRandomRoom();
     }
 }
