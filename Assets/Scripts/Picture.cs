@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Picture : MonoBehaviour, IInteractable
 {
+    public GameObject crystal;
     public void Interact()
     {
-        SwipePicture();
+        if (crystal.activeInHierarchy == true) SwipePicture();
     }
 
     void SwipePicture()
