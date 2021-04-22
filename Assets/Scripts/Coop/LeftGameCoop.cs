@@ -8,11 +8,15 @@ using UnityEngine.SceneManagement;
 public class LeftGameCoop : MonoBehaviourPunCallbacks
 {
     public GameObject PlayerPref;
+    public GameObject ActionObjects;
+    GameObject action;
 
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.Instantiate(PlayerPref.name, new Vector3(15,0,1), Quaternion.identity );
+
+        //PhotonNetwork.Instantiate(ActionObjects.name, new Vector3(0,0,0), Quaternion.identity);
     }
 
     // Update is called once per frame
