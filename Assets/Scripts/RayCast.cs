@@ -17,8 +17,7 @@ public class RayCast : MonoBehaviour
         if(playerController != null)
         {
             isUsingSmart = playerController.isUsingSmartphone;
-        }
-        
+        }     
     }
 
     void Update()

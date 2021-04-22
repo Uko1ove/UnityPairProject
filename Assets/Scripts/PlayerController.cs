@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (!photonView.IsMine) return;
+        if (photonView.IsMine) mainCamera.gameObject.SetActive(true);
 
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
