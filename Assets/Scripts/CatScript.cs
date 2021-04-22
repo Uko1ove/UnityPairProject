@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class CatScript : MonoBehaviour
 {
-    public AudioSource audio1;
+    private AudioSource audio1;
     public int cat_speed = 10;
+
+    private void Start()
+    {
+        audio1 = gameObject.GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * cat_speed);
         Ray ray1 = new Ray(transform.position, transform.forward);
 
-        if (Physics.Raycast(ray1, 4))
+        if (Physics.Raycast(ray1, 2))
         {
             audio1.Play();
 

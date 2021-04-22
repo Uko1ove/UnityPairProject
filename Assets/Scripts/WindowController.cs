@@ -5,31 +5,31 @@ using UnityEngine;
 public class WindowController : MonoBehaviour
 {
     private Animation animat;
-    private bool isOpened = false;
 
-    public bool IsOpened
+    public bool IsWindowOpened
     {
-        get => isOpened;
+        get; private set;
     }
 
     private void Start()
     {
         animat = gameObject.GetComponent<Animation>();
+        IsWindowOpened = false;
     }
 
     public void ToggleWindow()
     {
-        if(IsOpened == false)
+        if(IsWindowOpened == false)
         {
             OpenWindow(animat, "OpenRightWindow");
             OpenWindow(animat, "OpenLeftWindow");
-            isOpened = true;
+            IsWindowOpened = true;
         }
         else
         {
             CloseWindow(animat, "CloseRightWindow");
             CloseWindow(animat, "CloseLeftWindow");
-            isOpened = false;
+            IsWindowOpened = false;
         }
 
     }

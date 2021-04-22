@@ -9,6 +9,7 @@ public class RayCast : MonoBehaviour
     [SerializeField] GameObject itemContainer;
     public float rayDistance;
     private bool isUsingSmart;
+    private Camera cam;
 
     private void Start()
     {
@@ -16,13 +17,14 @@ public class RayCast : MonoBehaviour
         if(playerController != null)
         {
             isUsingSmart = playerController.isUsingSmartphone;
-        }
-        
+        }     
     }
 
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        cam = GetComponent<Camera>();
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
         RaycastHit hit;
 
         Debug.DrawRay(transform.position, ray.direction * rayDistance);

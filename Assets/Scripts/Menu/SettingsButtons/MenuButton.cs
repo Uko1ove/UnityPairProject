@@ -11,8 +11,10 @@ public class MenuButton : MonoBehaviour
     }
     public void Continue()
     {
-        SceneManager.LoadScene("Continue");
+        // загрузка из Pref
+        SceneManager.LoadScene("Game");
     }
+
     public void Return()
     {
         SceneManager.LoadScene("Menu");
