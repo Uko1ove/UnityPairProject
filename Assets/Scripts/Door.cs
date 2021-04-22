@@ -31,7 +31,9 @@ public class Door : MonoBehaviour, IInteractable
         switch (FullDoor.tag)
         {
             case "final_door":
-                if (Key.activeInHierarchy == true && Crystal_1.activeInHierarchy == true && Crystal_2.activeInHierarchy == true) trigger = true;
+                if (Key.activeInHierarchy == true &&
+                    Crystal_1.activeInHierarchy == true &&
+                    Crystal_2.activeInHierarchy == true) trigger = true;
                 break;
             case "simple_door":
                 trigger = true;
