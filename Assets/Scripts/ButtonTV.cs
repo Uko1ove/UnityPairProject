@@ -10,21 +10,21 @@ public class ButtonTV : MonoBehaviour, IInteractable
     public GameObject videoSource_1;
     public GameObject go1;
     private bool remote = false;
-    private Animator anim1;
+    Animator anim1;
 
     public void Interact()
     {
-        Play();
+        anim1 = GetComponent<Animator>();
+        if (anim1.enabled == false)  Play();
     }
 
     void Play()
     {
-        anim1 = GetComponent<Animator>();
         anim1.enabled = true;
 
         if (go1.activeInHierarchy == true) remote = true;
 
-        Invoke("VideoPlay", 1);
+        Invoke("VideoPlay", 2);
     }
 
     void VideoPlay()
