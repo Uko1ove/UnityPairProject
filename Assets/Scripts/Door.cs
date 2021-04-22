@@ -11,6 +11,8 @@ public class Door : MonoBehaviour, IInteractable
     public AudioSource audio2;
     public AudioSource audio3;
     public GameObject Key;
+    public GameObject Crystal_1;
+    public GameObject Crystal_2;
     Animator anim1;
     Animator anim2;
     bool trigger;
@@ -29,7 +31,7 @@ public class Door : MonoBehaviour, IInteractable
         switch (FullDoor.tag)
         {
             case "final_door":
-                if (Key.activeInHierarchy == true) trigger = true;
+                if (Key.activeInHierarchy == true && Crystal_1.activeInHierarchy == true && Crystal_2.activeInHierarchy == true) trigger = true;
                 break;
             case "simple_door":
                 trigger = true;
