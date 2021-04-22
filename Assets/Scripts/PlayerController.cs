@@ -34,12 +34,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         photonView = GetComponent<PhotonView>();
-
+        /*
         isUsingSmartphone = false;
         ipadPosition = smartphone.transform.position;
         ipadRotation = smartphone.transform.rotation;
         ipadScale = smartphone.transform.localScale;
-        isScreenBlocked = true;   
+        isScreenBlocked = true;
+        */
     }
 
     void Update()
@@ -53,6 +54,14 @@ public class PlayerController : MonoBehaviour
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
 
+        transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
+        transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed * vertical);
+        transform.Rotate(Vector3.up * mouseSpeed * Time.deltaTime * mouseX);
+
+        rotationX += mouseY * mouseSpeed * Time.deltaTime;
+        rotationX = Mathf.Clamp(rotationX, -30, 30);
+        mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
+        /*
         if (isUsingSmartphone == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
@@ -82,7 +91,7 @@ public class PlayerController : MonoBehaviour
             smartphone.transform.rotation = ipadRotation;
             smartphone.transform.localScale = ipadScale;
             isUsingSmartphone = false;
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.Space) )
             PhotonNetwork.LeaveRoom();

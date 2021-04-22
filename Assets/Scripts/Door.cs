@@ -19,6 +19,7 @@ public class Door : MonoBehaviour, IInteractable
     {
         anim1 = GetComponent<Animator>();
         anim2 = HandleRotate.GetComponent<Animator>();
+
         if (anim1.enabled == false && anim2.enabled == false) Open();
     }
 
