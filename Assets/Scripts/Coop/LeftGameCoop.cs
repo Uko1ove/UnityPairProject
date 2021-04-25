@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class LeftGameCoop : MonoBehaviourPunCallbacks
 {
     public GameObject PlayerPref;
-    public GameObject ActionObjects;
     GameObject action;
 
     // Start is called before the first frame update
