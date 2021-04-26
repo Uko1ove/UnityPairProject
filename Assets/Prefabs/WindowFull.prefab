@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0f46f953579b54ebd1e07b658a8972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Window: {fileID: 670695940561545468}
 --- !u!95 &9175118052340476823
 Animator:
   serializedVersion: 3
@@ -383,7 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670695941175612833}
   m_Layer: 0
-  m_Name: WindowLeft
+  m_Name: WindowFull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
