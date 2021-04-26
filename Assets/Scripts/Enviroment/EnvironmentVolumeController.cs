@@ -17,11 +17,11 @@ public class EnvironmentVolumeController : MonoBehaviour
     }
 
     // Update is called once per frame
-    /*void Update()
+    void Update()
     {
         foreach(var item in glassFrames)
         {
-            if (item.GetComponent<WindowController>().IsWindowOpened == true)
+            if (item.GetComponent<WindowController>().isOpen == true)
             {
                 if (isWindowOpened == true)
                 {
@@ -62,5 +62,5 @@ public class EnvironmentVolumeController : MonoBehaviour
             volume = 0.02f;
             gameObject.GetComponent<AudioSource>().volume = volume;
         }
-    }*/
+    }
 }

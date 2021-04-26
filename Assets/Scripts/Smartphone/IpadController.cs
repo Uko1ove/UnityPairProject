@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IpadController : MonoBehaviour
+public class IpadController : MonoBehaviour 
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject screenOff;
@@ -13,6 +13,7 @@ public class IpadController : MonoBehaviour
     private float sliderValue;
     private bool isScreenBlocked;
     private bool isIpadLocked;
+    
 
     public GameObject ScreenOff
     {

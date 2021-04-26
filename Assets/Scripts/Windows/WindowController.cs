@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class WindowController : MonoBehaviour, IInteractable
 {
-
+    [SerializeField] GameObject Window;
     Animator anim1;
-    public GameObject Window;
-    bool isOpen { get; set; }
+
+    public bool isOpen;
 
     public void Interact()
     {
@@ -24,7 +25,7 @@ public class WindowController : MonoBehaviour, IInteractable
     void Stop()
     {
         anim1.enabled = false;
-        if (transform.rotation.eulerAngles.y > 45) isOpen = true;
+        if (Window.transform.rotation.eulerAngles.y > 45) isOpen = true;
         else isOpen = false;
     }
 }
