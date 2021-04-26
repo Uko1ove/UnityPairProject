@@ -96,7 +96,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
         {
             IsScreenBlocked = !IsScreenBlocked;
-            IsScreenLocked = !IsScreenLocked;
+            if (IsScreenBlocked == false)
+            {
+                IsScreenLocked = true;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && isUsingSmartphone == true)

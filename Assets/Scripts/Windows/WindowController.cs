@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindowController : MonoBehaviour
+public class WindowController : MonoBehaviour, IInteractable
 {
     private Animation animat;
 
@@ -17,39 +17,31 @@ public class WindowController : MonoBehaviour
         IsWindowOpened = false;
     }
 
-    public void ToggleWindow()
+    public void OpenWindows(Animation anim, string animName)
     {
-        if(IsWindowOpened == false)
+        var clip = anim.GetClip(animName);
+        anim.clip = clip;
+        anim.Play();
+    }
+
+    public void CloseWindows(Animation anim, string animName)
+    {
+        var clip = anim.GetClip(animName);
+        anim.clip = clip;
+        anim.Play();
+    }
+
+    public void Interact()
+    {
+        if (IsWindowOpened == false)
         {
-            OpenWindow(animat, "OpenRightWindow");
-            OpenWindow(animat, "OpenLeftWindow");
+            OpenWindows(animat, "OpenWindows");
             IsWindowOpened = true;
         }
         else
         {
-            CloseWindow(animat, "CloseRightWindow");
-            CloseWindow(animat, "CloseLeftWindow");
+            CloseWindows(animat, "CloseWindows");
             IsWindowOpened = false;
         }
-
-    }
-
-    public void OpenWindow(Animation anim, string animName)
-    {
-        var clip = anim.GetClip(animName);
-        anim.clip = clip;
-        anim.Play();
-    }
-
-    public void CloseWindow(Animation anim, string animName)
-    {
-        var clip = anim.GetClip(animName);
-        anim.clip = clip;
-        anim.Play();
-    }
-
-    public void StopAnimation()
-    {
-        gameObject.GetComponent<Animation>().Stop();
     }
 }

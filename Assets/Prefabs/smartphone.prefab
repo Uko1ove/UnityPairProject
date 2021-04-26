@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee88199ce14512048bfaebe9bec8405f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 6164641080919988684, guid: a0ebed95de2a52944852c8c29658123b, type: 3}
   screenOff: {fileID: 622342672104895600}
   screenOnLocked: {fileID: 622342671895348044}
   slider: {fileID: 622342671426976388}

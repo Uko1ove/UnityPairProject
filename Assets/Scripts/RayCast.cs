@@ -35,7 +35,7 @@ public class RayCast : MonoBehaviour
                 var interactComponent = hit.collider.GetComponent<IInteractable>();
                 interactComponent.Interact();
             }
-            /*
+            
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.name == "smartphone")
             {
                 if (isUsingSmart == false)
@@ -45,14 +45,14 @@ public class RayCast : MonoBehaviour
                     
                     go1.transform.localPosition = new Vector3(0, 0, 0);
                     go1.transform.localRotation = Quaternion.identity;
-                    itemContainer.transform.localPosition = new Vector3(0, 0, 0.15f);
+                    itemContainer.transform.localPosition = new Vector3(0, 0, 0.2f);
                     itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(90, 0, 180));
                     isUsingSmart = true;
                     player.GetComponent<PlayerController>().isUsingSmartphone = isUsingSmart;
                 }
 
                 isUsingSmart = player.GetComponent<PlayerController>().isUsingSmartphone;
-            }*/
+            }
         }
     }
 }

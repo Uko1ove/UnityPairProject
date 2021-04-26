@@ -37,7 +37,7 @@ public class IpadController : MonoBehaviour
     private void Start()
     {
         sliderValue = 0;
-
+        isScreenBlocked = true;
     }
 
     private void Update()

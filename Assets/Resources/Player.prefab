@@ -2581,11 +2581,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2773071055770124830}
-  smartphone: {fileID: 0}
-  screenOff: {fileID: 0}
-  screenOnLocked: {fileID: 0}
-  screenOnUnlocked: {fileID: 0}
-  slider: {fileID: 0}
   isUsingSmartphone: 0
 --- !u!114 &7244719777628759369
 MonoBehaviour:
