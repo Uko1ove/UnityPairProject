@@ -8,11 +8,11 @@ public class WindowController : MonoBehaviour, IInteractable
     [SerializeField] GameObject Window;
     Animator anim1;
 
-    public bool isOpen;
+    public bool isOpen { get; private set; }
 
     public void Interact()
     {
-        anim1 = GetComponent<Animator>();
+        anim1 = gameObject.GetComponent<Animator>();
         if (anim1.enabled == false) Open();
     }
 
