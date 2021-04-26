@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Window: {fileID: 670695940561545468}
+  isOpen: 0
 --- !u!95 &9175118052340476823
 Animator:
   serializedVersion: 3
@@ -212,7 +213,7 @@ Animator:
   m_GameObject: {fileID: 670695940516285373}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bab964a986af80b408ee675d55c73ea8, type: 2}
+  m_Controller: {fileID: 9100000, guid: bd46cbd3174873448881d606a6789b1d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

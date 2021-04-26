@@ -2799,8 +2799,8 @@ Transform:
   - {fileID: 1490408804}
   - {fileID: 1734400323}
   - {fileID: 1305157259}
-  - {fileID: 767720389568546187}
   - {fileID: 2036587395}
+  - {fileID: 767720389568546187}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5808,7 +5808,7 @@ Transform:
   - {fileID: 982253068}
   - {fileID: 1416942535}
   m_Father: {fileID: 1083949039}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2047811583
 GameObject:
@@ -6697,7 +6697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7422178631730852548, guid: 505dadbcc8e9ecf4b8b556f491da6182, type: 3}
       propertyPath: m_TagString
-      value: simple_door
+      value: final_door
       objectReference: {fileID: 0}
     - target: {fileID: 7422178631730852549, guid: 505dadbcc8e9ecf4b8b556f491da6182, type: 3}
       propertyPath: m_RootOrder

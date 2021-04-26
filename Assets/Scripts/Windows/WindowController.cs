@@ -19,7 +19,7 @@ public class WindowController : MonoBehaviour, IInteractable
     public void Open()
     {
         anim1.enabled = true;
-        Invoke("Stop", 0.51f);
+        Invoke("Stop", 1.01f);
     }
 
     void Stop()
