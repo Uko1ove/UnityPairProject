@@ -275,6 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4079876425313796994}
   - component: {fileID: 4079876425313796995}
+  - component: {fileID: 8103060509430812273}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -315,6 +316,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8103060509430812273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4079876425313796993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9103735c0573eae40804e91d4caf51af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer_0: {fileID: 4079876426095199123}
+  videoSource_0: {fileID: 4079876426172644595}
+  go1: {fileID: 0}
 --- !u!1 &4079876425393604083
 GameObject:
   m_ObjectHideFlags: 0
