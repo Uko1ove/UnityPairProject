@@ -7,9 +7,11 @@ public class Door : MonoBehaviour, IInteractable
 {
     public GameObject HandleRotate;
     public GameObject FullDoor;
+
     public AudioSource audio1;
     public AudioSource audio2;
     public AudioSource audio3;
+
     public GameObject Key;
     public GameObject Crystal_1;
     public GameObject Crystal_2;
