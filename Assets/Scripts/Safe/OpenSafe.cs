@@ -12,18 +12,22 @@ public class OpenSafe : MonoBehaviour, IInteractable
     public AudioSource audio1;
     public GameObject HandleRotate;
 
+    Animator anim1;
+    Animator anim2;
+
     public void Interact()
     {
-        Open();
+        anim1 = GetComponent<Animator>();
+        anim2 = HandleRotate.GetComponent<Animator>();
+
+        if (anim1.enabled == false && anim2.enabled == false) Open();
     }
     public void Open()
     {
-        if (num1.text == "1" && num2.text == "0" && num3.text == "0" && num4.text == "0")
+        if (num1.text == "1" && num2.text == "4" && num3.text == "8" && num4.text == "2")
         {
-            Animator anim1 = GetComponent<Animator>();
             anim1.enabled = true;
 
-            Animator anim2 = HandleRotate.GetComponent<Animator>();
             anim2.enabled = true;
 
             audio1.Play();

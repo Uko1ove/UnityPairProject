@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class TakeObject : MonoBehaviour, IInteractable
 {
-    public Sprite item;
     public GameObject itemPanel;
 
     public void Interact()

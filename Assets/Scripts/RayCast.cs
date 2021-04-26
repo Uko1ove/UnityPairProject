@@ -35,7 +35,7 @@ public class RayCast : MonoBehaviour
                 var interactComponent = hit.collider.GetComponent<IInteractable>();
                 interactComponent.Interact();
             }
-
+            /*
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.name == "smartphone")
             {
                 if (isUsingSmart == false)
@@ -52,7 +52,7 @@ public class RayCast : MonoBehaviour
                 }
 
                 isUsingSmart = player.GetComponent<PlayerController>().isUsingSmartphone;
-            }
+            }*/
         }
     }
 }

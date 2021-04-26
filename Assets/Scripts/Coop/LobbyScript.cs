@@ -29,7 +29,7 @@ public class LobbyScript : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Joined the room");
-        PhotonNetwork.LoadLevel("Game");
+        PhotonNetwork.LoadLevel("GameNetwork");
     }
 
     public void JoinRoom()
