@@ -2481,8 +2481,8 @@ GameObject:
   - component: {fileID: 2773071055028175807}
   - component: {fileID: 2773071055028175806}
   - component: {fileID: 1512451105884201735}
-  - component: {fileID: 5095907345236172141}
   - component: {fileID: 2773071055028175805}
+  - component: {fileID: 2139892681035271963}
   - component: {fileID: 7244719777628759369}
   - component: {fileID: 8965081444818500969}
   m_Layer: 0
@@ -2556,18 +2556,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5095907345236172141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6164641080919988684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 619b592dcb6073945aec26be43443869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2773071055028175805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2582,6 +2570,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2773071055770124830}
   isUsingSmartphone: 0
+--- !u!114 &2139892681035271963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164641080919988684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619b592dcb6073945aec26be43443869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7244719777628759369
 MonoBehaviour:
   m_ObjectHideFlags: 0
