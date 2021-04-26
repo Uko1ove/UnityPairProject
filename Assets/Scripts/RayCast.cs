@@ -24,6 +24,7 @@ public class RayCast : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(transform.position, ray.direction * rayDistance);
 
         RaycastHit hit;
 
