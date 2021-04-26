@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
-    [SerializeField] GameObject smartphone;
-    [SerializeField] GameObject screenOff;
-    [SerializeField] GameObject screenOnLocked;
-    [SerializeField] GameObject screenOnUnlocked;
-    [SerializeField] GameObject slider;
+    private GameObject smartphone;
+    private GameObject screenOff;
+    private GameObject screenOnLocked;
+    private GameObject slider;
 
+    private float sliderValue;
     private const float playerSpeed = 10f;
     private const float mouseSpeed = 120f;
     private float horizontal;
@@ -21,11 +21,21 @@ public class PlayerController : MonoBehaviour
     private float mouseY;
     private float cameraRotation;
     private float rotationX = 0f;
-    private bool isScreenOn;
+
     private Vector3 ipadPosition;
     private Quaternion ipadRotation;
     private Vector3 ipadScale;
-    private bool isScreenBlocked;
+
+    public bool IsScreenBlocked
+    {
+        get; private set;
+    }
+
+    public bool IsScreenLocked
+    {
+        get; private set;
+    }
+
     private PhotonView photonView;
 
     public bool isUsingSmartphone;
@@ -34,13 +44,23 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         photonView = GetComponent<PhotonView>();
-        /*
+
+        smartphone = GameObject.FindGameObjectWithTag("ipad");
+        screenOff = smartphone.GetComponent<IpadController>().ScreenOff;
+        slider = smartphone.GetComponent<IpadController>().Slider;
+
+        ipadPosition = smartphone.transform.position;
+        ipadRotation = smartphone.transform.rotation;
+        ipadScale = smartphone.transform.localScale;
+        IsScreenBlocked = screenOff.activeSelf;
+        IsScreenLocked = true;
+        isUsingSmartphone = false;
+
         isUsingSmartphone = false;
         ipadPosition = smartphone.transform.position;
         ipadRotation = smartphone.transform.rotation;
         ipadScale = smartphone.transform.localScale;
-        isScreenBlocked = true;
-        */
+        //isScreenBlocked = true;
     }
 
     void Update()
@@ -61,7 +81,7 @@ public class PlayerController : MonoBehaviour
         rotationX += mouseY * mouseSpeed * Time.deltaTime;
         rotationX = Mathf.Clamp(rotationX, -30, 30);
         mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
-        /*
+
         if (isUsingSmartphone == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
@@ -75,13 +95,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
         {
-            if (isScreenBlocked == true)
-            {
-                screenOnLocked.SetActive(true);
-                slider.GetComponent<Slider>().value = 0;
-            }
-            screenOff.SetActive(!isScreenBlocked);
-            isScreenBlocked = !isScreenBlocked;
+            IsScreenBlocked = !IsScreenBlocked;
+            IsScreenLocked = !IsScreenLocked;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && isUsingSmartphone == true)
@@ -91,9 +106,9 @@ public class PlayerController : MonoBehaviour
             smartphone.transform.rotation = ipadRotation;
             smartphone.transform.localScale = ipadScale;
             isUsingSmartphone = false;
-        }*/
+        }
 
-        if (Input.GetKeyDown(KeyCode.Space) )
+        if (Input.GetKeyDown(KeyCode.Space))
             PhotonNetwork.LeaveRoom();
     }
-}    
+}
