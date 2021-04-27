@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IpadController : MonoBehaviour 
+public class IpadControllerSingle : MonoBehaviour 
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject screenOff;
@@ -43,13 +43,15 @@ public class IpadController : MonoBehaviour
 
     private void Update()
     {
-        isScreenBlocked = player.GetComponent<PlayerController>().IsScreenBlocked;
-        screenOff.SetActive(isScreenBlocked);
+        isScreenBlocked = player.GetComponent<PlayerControllerSingle>().IsScreenBlocked;
+        //screenOff.SetActive(isScreenBlocked);
         sliderValue = slider.GetComponent<Slider>().value;
-        isIpadLocked = player.GetComponent<PlayerController>().IsScreenLocked;
+        isIpadLocked = player.GetComponent<PlayerControllerSingle>().IsScreenLocked;
 
         if (isScreenBlocked == false)
         {
+            screenOff.SetActive(false);
+
             if (sliderValue >= 0.85)
             {
                 screenOnLocked.SetActive(false);

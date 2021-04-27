@@ -46,8 +46,8 @@ public class PlayerController : MonoBehaviour
         photonView = GetComponent<PhotonView>();
 
         smartphone = GameObject.FindGameObjectWithTag("ipad");
-        screenOff = smartphone.GetComponent<IpadController>().ScreenOff;
-        slider = smartphone.GetComponent<IpadController>().Slider;
+        //screenOff = smartphone.GetComponent<IpadController>().ScreenOff;
+        //slider = smartphone.GetComponent<IpadController>().Slider;
 
         ipadPosition = smartphone.transform.position;
         ipadRotation = smartphone.transform.rotation;

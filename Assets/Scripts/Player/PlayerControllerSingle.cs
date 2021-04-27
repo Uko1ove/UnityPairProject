@@ -42,8 +42,8 @@ public class PlayerControllerSingle : MonoBehaviour
     void Start()
     {
         smartphone = GameObject.FindGameObjectWithTag("ipad");
-        screenOff = smartphone.GetComponent<IpadController>().ScreenOff;
-        slider = smartphone.GetComponent<IpadController>().Slider;
+        screenOff = smartphone.GetComponent<IpadControllerSingle>().ScreenOff;
+        slider = smartphone.GetComponent<IpadControllerSingle>().Slider;
 
         ipadPosition = smartphone.transform.position;
         ipadRotation = smartphone.transform.rotation;
@@ -89,10 +89,10 @@ public class PlayerControllerSingle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
         {
             IsScreenBlocked = !IsScreenBlocked;
-            if (IsScreenBlocked == false)
+            /*if (IsScreenBlocked == false)
             {
                 IsScreenLocked = true;
-            }
+            }*/
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isUsingSmartphone == true)

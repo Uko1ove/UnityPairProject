@@ -14,10 +14,7 @@ public class RayCastSingle : MonoBehaviour
     private void Start()
     {
         var playerController = player.GetComponent<PlayerControllerSingle>();
-        if(playerController != null)
-        {
-            isUsingSmart = playerController.isUsingSmartphone;
-        }     
+        isUsingSmart = false;   
     }
 
     void Update()

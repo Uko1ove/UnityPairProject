@@ -1254,6 +1254,11 @@ Transform:
   m_Father: {fileID: 2036587395}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &229167088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8872445359487490673, guid: e5cecce21259b9a41b6404b86e9a33bb, type: 3}
+  m_PrefabInstance: {fileID: 7596834656177065188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &255661007
 GameObject:
   m_ObjectHideFlags: 0
@@ -9591,22 +9596,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121885352}
   m_CullTransparentMesh: 1
---- !u!114 &341817656352785536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771104316072693029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee88199ce14512048bfaebe9bec8405f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 6164641080919988684, guid: a0ebed95de2a52944852c8c29658123b, type: 3}
-  screenOff: {fileID: 1014334060}
-  screenOnLocked: {fileID: 167212368}
-  slider: {fileID: 367807640}
 --- !u!4 &651317177515421098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4482784137014271480, guid: 1ecf49c3f03fbc44cbbcfa12f66335f8, type: 3}
@@ -9654,7 +9643,8 @@ GameObject:
   - component: {fileID: 779094048618218983}
   - component: {fileID: 785189332713837009}
   - component: {fileID: 771104316072693030}
-  - component: {fileID: 341817656352785536}
+  - component: {fileID: 771104316072693031}
+  - component: {fileID: 771104316072693032}
   m_Layer: 0
   m_Name: smartphone
   m_TagString: ipad
@@ -9675,6 +9665,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06688931, y: 0.0069652298, z: 0.13801868}
   m_Center: {x: 0, y: 0.0034847574, z: 0}
+--- !u!114 &771104316072693031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771104316072693029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9357d4da7cdde714784a2720df40cbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 229167088}
+  screenOff: {fileID: 1014334060}
+  screenOnLocked: {fileID: 167212368}
+  slider: {fileID: 367807640}
+--- !u!114 &771104316072693032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771104316072693029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!33 &779094048618218983
 MeshFilter:
   m_ObjectHideFlags: 0
