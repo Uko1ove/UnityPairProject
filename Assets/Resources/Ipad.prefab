@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7d37f08db0a0c439191379ac25e07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ipad: {fileID: 148761822652807993}
   screenOff: {fileID: 622342672104895600}
   screenOnLocked: {fileID: 622342671895348044}
   slider: {fileID: 622342671426976388}
