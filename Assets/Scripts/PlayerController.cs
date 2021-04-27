@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && isUsingSmartphone == true)
+        if (Input.GetKeyDown(KeyCode.Space) && isUsingSmartphone == true)
         {
             smartphone.transform.parent = null;
             smartphone.transform.position = ipadPosition;
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
             isUsingSmartphone = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Escape))
             PhotonNetwork.LeaveRoom();
     }
 }
