@@ -8025,6 +8025,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7655510814760187892}
     m_Modifications:
+    - target: {fileID: -804518406270984841, guid: 61e3139ab263253459e3410fdb5e8418, type: 3}
+      propertyPath: sceneViewId
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 145378512509498263, guid: 61e3139ab263253459e3410fdb5e8418, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8081,7 +8085,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 872959473743426204, guid: 61e3139ab263253459e3410fdb5e8418, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 61e3139ab263253459e3410fdb5e8418, type: 3}
 --- !u!1001 &670695942265136577
 PrefabInstance:

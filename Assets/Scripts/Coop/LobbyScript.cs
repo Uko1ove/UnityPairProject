@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LobbyScript : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
+
     void Start()
     {
         PhotonNetwork.NickName = "Player" + Random.Range(0,2);

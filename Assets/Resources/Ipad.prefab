@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 174765947735127035}
   - component: {fileID: 163973284759676877}
   - component: {fileID: 148761822652807994}
-  - component: {fileID: 872959473743426204}
+  - component: {fileID: 8994302768996913404}
+  - component: {fileID: -804518406270984841}
+  - component: {fileID: 8501899029419051084}
   m_Layer: 0
-  m_Name: smartphone
+  m_Name: Ipad
   m_TagString: ipad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +100,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06688931, y: 0.0069652298, z: 0.13801868}
   m_Center: {x: 0, y: 0.0034847574, z: 0}
---- !u!114 &872959473743426204
+--- !u!114 &8994302768996913404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,13 +109,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 148761822652807993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee88199ce14512048bfaebe9bec8405f, type: 3}
+  m_Script: {fileID: 11500000, guid: eb7d37f08db0a0c439191379ac25e07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6164641080919988684, guid: a0ebed95de2a52944852c8c29658123b, type: 3}
   screenOff: {fileID: 622342672104895600}
   screenOnLocked: {fileID: 622342671895348044}
   slider: {fileID: 622342671426976388}
+--- !u!114 &-804518406270984841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148761822652807993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 8501899029419051084}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &8501899029419051084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148761822652807993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &622342670314348482
 GameObject:
   m_ObjectHideFlags: 0
