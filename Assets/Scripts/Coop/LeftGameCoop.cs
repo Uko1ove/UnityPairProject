@@ -12,7 +12,7 @@ public class LeftGameCoop : MonoBehaviourPunCallbacks
 
     void Awake()
     {
-        PhotonNetwork.Instantiate(PlayerPref.name, new Vector3(15,0,1), Quaternion.identity );
+        PhotonNetwork.Instantiate(PlayerPref.name, new Vector3(-22,0,1), Quaternion.identity );
     }
 
     void Update()
