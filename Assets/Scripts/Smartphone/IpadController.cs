@@ -22,15 +22,22 @@ public class IpadController : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        photonView = GetComponent<PhotonView>();
+        photonView.RPC("TakeIpad", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void TakeIpad()
+    {
         transform.parent = itemContainer.transform;
-        
+
         transform.localPosition = new Vector3(0, 0, 0);
         transform.localRotation = Quaternion.identity;
         itemContainer.transform.localPosition = new Vector3(0, 0, 0.2f);
         itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(90, 0, 180));
     }
 
-    private void Start()
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("player");
         sliderValue = 0;
