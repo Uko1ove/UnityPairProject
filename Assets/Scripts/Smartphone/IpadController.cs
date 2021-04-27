@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class IpadController : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameObject ipad;
     GameObject player;
     [SerializeField] GameObject screenOff;
     [SerializeField] GameObject screenOnLocked;
@@ -30,13 +29,10 @@ public class IpadController : MonoBehaviour, IInteractable
     [PunRPC]
     void TakeIpad()
     {
-        Debug.Log(ipad);
-        Debug.Log(itemContainer);
+        transform.parent = itemContainer.transform;
 
-        ipad.transform.parent = itemContainer.transform;
-
-        ipad.transform.localPosition = new Vector3(0, 0, 0);
-        ipad.transform.localRotation = Quaternion.identity;
+        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localRotation = Quaternion.identity;
         itemContainer.transform.localPosition = new Vector3(0, 1.65f, 0.35f);
         itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
     }
