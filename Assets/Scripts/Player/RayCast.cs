@@ -11,17 +11,13 @@ public class RayCast : MonoBehaviour
     private bool isUsingSmart;
     private Camera cam;
 
-    private void Start()
-    {
-        var playerController = player.GetComponent<PlayerController>();
-        if(playerController != null)
-        {
-            isUsingSmart = playerController.isUsingSmartphone;
-        }     
-    }
-
     void Update()
     {
+        var playerController = player.GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            isUsingSmart = playerController.isUsingSmartphone;
+        }
         cam = GetComponent<Camera>();
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(transform.position, ray.direction * rayDistance);
@@ -40,18 +36,13 @@ public class RayCast : MonoBehaviour
             {
                 if (isUsingSmart == false)
                 {
-                    GameObject go1 = hit.collider.gameObject;
-                    go1.transform.parent = itemContainer.transform;
+                    var interactComponent = hit.collider.GetComponent<IInteractable>();
+                    interactComponent.Interact();
+                    //GameObject go1 = hit.collider.gameObject;
                     
-                    go1.transform.localPosition = new Vector3(0, 0, 0);
-                    go1.transform.localRotation = Quaternion.identity;
-                    itemContainer.transform.localPosition = new Vector3(0, 0, 0.2f);
-                    itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(90, 0, 180));
                     isUsingSmart = true;
                     player.GetComponent<PlayerController>().isUsingSmartphone = isUsingSmart;
                 }
-
-                isUsingSmart = player.GetComponent<PlayerController>().isUsingSmartphone;
             }
         }
     }

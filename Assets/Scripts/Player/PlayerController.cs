@@ -6,11 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] Camera mainCamera;
+    public Camera mainCamera;
     private GameObject smartphone;
-    private GameObject screenOff;
-    private GameObject screenOnLocked;
-    private GameObject slider;
 
     private float sliderValue;
     private const float playerSpeed = 10f;
@@ -21,37 +18,23 @@ public class PlayerController : MonoBehaviour
     private float mouseY;
     private float cameraRotation;
     private float rotationX = 0f;
-
-    private Vector3 ipadPosition;
-    private Quaternion ipadRotation;
-    private Vector3 ipadScale;
+    public bool isUsingSmartphone;
+    private PhotonView photonView;
 
     public bool IsScreenBlocked
     {
         get; private set;
     }
 
-    public bool IsScreenLocked
-    {
-        get; private set;
-    }
-
-    private PhotonView photonView;
-
-    public bool isUsingSmartphone;
+    
 
     void Start()
     {
         photonView = GetComponent<PhotonView>();
 
         smartphone = GameObject.FindGameObjectWithTag("ipad");
-        screenOff = smartphone.GetComponent<IpadController>().ScreenOff;
-        slider = smartphone.GetComponent<IpadController>().Slider;
 
-        ipadPosition = smartphone.transform.position;
-        ipadRotation = smartphone.transform.rotation;
-        ipadScale = smartphone.transform.localScale;
-        IsScreenBlocked = screenOff.activeSelf;
+        IsScreenBlocked = true;
         isUsingSmartphone = false;
     }
 
@@ -82,12 +65,9 @@ public class PlayerController : MonoBehaviour
             IsScreenBlocked = !IsScreenBlocked;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isUsingSmartphone == true)
+        if (Input.GetKeyDown(KeyCode.LeftAlt) && isUsingSmartphone == true)
         {
-            smartphone.transform.parent = null;
-            smartphone.transform.position = ipadPosition;
-            smartphone.transform.rotation = ipadRotation;
-            smartphone.transform.localScale = ipadScale;
+            IsScreenBlocked = true;
             isUsingSmartphone = false;
         }
 

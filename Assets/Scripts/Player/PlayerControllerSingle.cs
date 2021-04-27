@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerSingle : MonoBehaviour
 {
-    [SerializeField] Camera mainCamera;
+    public Camera mainCamera;
     private GameObject smartphone;
-    private GameObject screenOff;
-    private GameObject screenOnLocked;
-    private GameObject slider;
 
     private float sliderValue;
     private const float playerSpeed = 10f;
@@ -21,39 +18,20 @@ public class PlayerControllerSingle : MonoBehaviour
     private float mouseY;
     private float cameraRotation;
     private float rotationX = 0f;
-
-    private Vector3 ipadPosition;
-    private Quaternion ipadRotation;
-    private Vector3 ipadScale;
+    public bool isUsingSmartphone;
 
     public bool IsScreenBlocked
     {
         get; private set;
     }
 
-    public bool IsScreenLocked
-    {
-        get; private set;
-    }
 
-    public bool isUsingSmartphone;
 
-    // Start is called before the first frame update
     void Start()
     {
         smartphone = GameObject.FindGameObjectWithTag("ipad");
-        screenOff = smartphone.GetComponent<IpadControllerSingle>().ScreenOff;
-        slider = smartphone.GetComponent<IpadControllerSingle>().Slider;
-
-        ipadPosition = smartphone.transform.position;
-        ipadRotation = smartphone.transform.rotation;
-        ipadScale = smartphone.transform.localScale;
-        IsScreenBlocked = screenOff.activeSelf;
+        IsScreenBlocked = true;
         isUsingSmartphone = false;
-
-        ipadPosition = smartphone.transform.position;
-        ipadRotation = smartphone.transform.rotation;
-        ipadScale = smartphone.transform.localScale;
     }
 
     void Update()
@@ -78,19 +56,18 @@ public class PlayerControllerSingle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
         {
             IsScreenBlocked = !IsScreenBlocked;
-            
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isUsingSmartphone == true)
+        if (Input.GetKeyDown(KeyCode.LeftAlt) && isUsingSmartphone == true)
         {
-            smartphone.transform.parent = null;
-            smartphone.transform.position = ipadPosition;
-            smartphone.transform.rotation = ipadRotation;
-            smartphone.transform.localScale = ipadScale;
+            IsScreenBlocked = true;
             isUsingSmartphone = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
-            SceneManager.LoadScene("Menu");
+        {
+            // Отображение внутриигрового меню: Save, Load, Exit
+        }
+
     }
 }

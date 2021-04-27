@@ -3,65 +3,76 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IpadControllerSingle : MonoBehaviour 
+public class IpadControllerSingle : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameObject player;
+    GameObject player;
     [SerializeField] GameObject screenOff;
     [SerializeField] GameObject screenOnLocked;
     [SerializeField] GameObject slider;
 
+    private GameObject itemContainer;
+    private bool isUsed;
     private float sliderValue;
     private bool isScreenBlocked;
-    //private bool isIpadLocked;
-    
+    private Vector3 ipadPosition;
+    private Quaternion ipadRotation;
+    private Vector3 ipadScale;
 
-    public GameObject ScreenOff
+    public void Interact()
     {
-        get => screenOff;
-    }
+        transform.parent = itemContainer.transform;
 
-    public GameObject ScreenOnLocked
-    {
-        get => screenOnLocked;
-    }
-
-    public GameObject Slider
-    {
-        get => slider;
-    }
-
-    public float SliderValue
-    {
-        get => sliderValue;
+        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localRotation = Quaternion.identity;
+        itemContainer.transform.localPosition = new Vector3(0, 0, 0.2f);
+        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(90, 0, 180));
     }
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("player");
         sliderValue = 0;
         isScreenBlocked = true;
+        ipadPosition = transform.position;
+        ipadRotation = transform.rotation;
+        ipadScale = transform.localScale;
+        itemContainer = player.GetComponent<PlayerControllerSingle>().mainCamera.transform.GetChild(0).gameObject;
     }
 
-    private void Update()
+    void Update()
     {
+        isUsed = player.GetComponent<PlayerControllerSingle>().isUsingSmartphone;
         isScreenBlocked = player.GetComponent<PlayerControllerSingle>().IsScreenBlocked;
-        //screenOff.SetActive(isScreenBlocked);
         sliderValue = slider.GetComponent<Slider>().value;
-        //isIpadLocked = player.GetComponent<PlayerControllerSingle>().IsScreenLocked;
-        screenOff.SetActive(isScreenBlocked);
 
-        if (sliderValue >= 0.85)
+        if (isUsed)
         {
-            screenOnLocked.SetActive(false);
+            screenOff.SetActive(isScreenBlocked);
+
+            if (sliderValue >= 0.85)
+            {
+                screenOnLocked.SetActive(false);
+            }
+            else
+            {
+                screenOnLocked.SetActive(true);
+            }
+
+            if (isScreenBlocked == true)
+            {
+                screenOnLocked.SetActive(isScreenBlocked);
+                slider.GetComponent<Slider>().value = 0;
+            }
+
         }
         else
         {
+            screenOff.SetActive(isScreenBlocked);
             screenOnLocked.SetActive(true);
-        }
-
-        if (isScreenBlocked == true)
-        {
-            screenOnLocked.SetActive(isScreenBlocked);
-            slider.GetComponent<Slider>().value = 0;
+            transform.parent = null;
+            transform.position = ipadPosition;
+            transform.rotation = ipadRotation;
+            transform.localScale = ipadScale;
         }
     }
 }
