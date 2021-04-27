@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class IpadController : MonoBehaviour, IInteractable
     [SerializeField] GameObject screenOff;
     [SerializeField] GameObject screenOnLocked;
     [SerializeField] GameObject slider;
+    PhotonView photonView;
 
     private GameObject itemContainer;
     private bool isUsed;
@@ -26,7 +28,6 @@ public class IpadController : MonoBehaviour, IInteractable
         transform.localRotation = Quaternion.identity;
         itemContainer.transform.localPosition = new Vector3(0, 0, 0.2f);
         itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(90, 0, 180));
-        Debug.Log(1);
     }
 
     private void Start()
