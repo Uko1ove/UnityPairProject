@@ -2432,7 +2432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8887182263329445834, guid: 058de653643687c4db059ed499c54862, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.72
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 8887182263329445834, guid: 058de653643687c4db059ed499c54862, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2440,7 +2440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8887182263329445834, guid: 058de653643687c4db059ed499c54862, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.39
+      value: 15.42
       objectReference: {fileID: 0}
     - target: {fileID: 8887182263329445834, guid: 058de653643687c4db059ed499c54862, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4305,6 +4305,11 @@ Transform:
   m_Father: {fileID: 7655510814760187892}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &935151590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8885685422030497382, guid: 058de653643687c4db059ed499c54862, type: 3}
+  m_PrefabInstance: {fileID: 494865163}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &982253064
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,11 +5938,11 @@ MonoBehaviour:
   windowGlasses:
   - {fileID: 1379279795}
   - {fileID: 620964339}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1964990823}
+  - {fileID: 935151590}
   glassFrames:
   - {fileID: 1774677628}
-  - {fileID: 0}
+  - {fileID: 1964750853}
 --- !u!82 &1341543530
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9291,6 +9296,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2becbdb479b0c489b64656c9ec3e61, type: 3}
+--- !u!1 &1964750853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8887182262915025366, guid: 058de653643687c4db059ed499c54862, type: 3}
+  m_PrefabInstance: {fileID: 494865163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1964990823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8885685421760582648, guid: 058de653643687c4db059ed499c54862, type: 3}
+  m_PrefabInstance: {fileID: 494865163}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2023884389
 GameObject:
   m_ObjectHideFlags: 0
@@ -10062,29 +10077,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9130202953370365302, guid: d6bbff3e39ba4574f8540da835d0aac6, type: 3}
   m_PrefabInstance: {fileID: 6266842348905918013}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3235514501527876487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7655510814760187893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 7005084855747574322}
-  sceneViewId: 3
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!4 &3656322381958048011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9052208930582958948, guid: 62a4adb0db49e2147be88b6968e898da, type: 3}
@@ -10423,22 +10415,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6bbff3e39ba4574f8540da835d0aac6, type: 3}
---- !u!114 &7005084855747574322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7655510814760187893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1001 &7596834656177065188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10548,8 +10524,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7655510814760187892}
-  - component: {fileID: 3235514501527876487}
-  - component: {fileID: 7005084855747574322}
   m_Layer: 0
   m_Name: ActiveObjects
   m_TagString: action
