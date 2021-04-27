@@ -23,6 +23,8 @@ public class IpadController : MonoBehaviour, IInteractable
     public void Interact()
     {
         photonView = GetComponent<PhotonView>();
+        photonView.RPC("Start", RpcTarget.All);
+        photonView.RPC("Update", RpcTarget.All);
         photonView.RPC("TakeIpad", RpcTarget.All);
     }
 
