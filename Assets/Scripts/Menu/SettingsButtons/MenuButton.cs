@@ -7,12 +7,12 @@ public class MenuButton : MonoBehaviour
 {
     public void New()
     {
-        //SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameSingle");
     }
     public void Continue()
     {
         // загрузка из Pref
-        //SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameSingle");
     }
 
     public void Return()
