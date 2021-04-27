@@ -8075,7 +8075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 148761822652807993, guid: 61e3139ab263253459e3410fdb5e8418, type: 3}
       propertyPath: m_Name
-      value: smartphone
+      value: ipad
       objectReference: {fileID: 0}
     - target: {fileID: 622342670588114113, guid: 61e3139ab263253459e3410fdb5e8418, type: 3}
       propertyPath: m_AnchorMax.y

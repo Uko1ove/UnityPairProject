@@ -32,13 +32,12 @@ public class RayCast : MonoBehaviour
                 interactComponent.Interact();
             }
             
-            if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.name == "smartphone")
+            if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.name == "ipad")
             {
                 if (isUsingSmart == false)
                 {
                     var interactComponent = hit.collider.GetComponent<IInteractable>();
                     interactComponent.Interact();
-                    //GameObject go1 = hit.collider.gameObject;
                     
                     isUsingSmart = true;
                     player.GetComponent<PlayerController>().isUsingSmartphone = isUsingSmart;

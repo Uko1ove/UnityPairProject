@@ -33,8 +33,8 @@ public class IpadController : MonoBehaviour, IInteractable
 
         transform.localPosition = new Vector3(0, 0, 0);
         transform.localRotation = Quaternion.identity;
-        itemContainer.transform.localPosition = new Vector3(0, 0, 0.2f);
-        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(90, 0, 180));
+        itemContainer.transform.localPosition = new Vector3(0, 1.65f, 0.35f);
+        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
     }
 
     void Start()
@@ -45,7 +45,7 @@ public class IpadController : MonoBehaviour, IInteractable
         ipadPosition = transform.position;
         ipadRotation = transform.rotation;
         ipadScale = transform.localScale;
-        itemContainer = player.GetComponent<PlayerController>().mainCamera.transform.GetChild(0).gameObject;
+        itemContainer = player.transform.GetChild(0).gameObject;
     }
 
     void Update()
