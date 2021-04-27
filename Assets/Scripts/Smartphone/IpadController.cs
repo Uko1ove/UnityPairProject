@@ -30,6 +30,8 @@ public class IpadController : MonoBehaviour, IInteractable
     void TakeIpad()
     {
         Debug.Log(transform.parent);
+        Debug.Log(itemContainer);
+
         transform.parent = itemContainer.transform;
 
         transform.localPosition = new Vector3(0, 0, 0);
