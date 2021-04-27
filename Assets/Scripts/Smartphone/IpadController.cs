@@ -23,14 +23,13 @@ public class IpadController : MonoBehaviour, IInteractable
     public void Interact()
     {
         photonView = GetComponent<PhotonView>();
-        photonView.RPC("Start", RpcTarget.All);
-        photonView.RPC("Update", RpcTarget.All);
         photonView.RPC("TakeIpad", RpcTarget.All);
     }
 
     [PunRPC]
     void TakeIpad()
     {
+        Debug.Log(transform.parent);
         transform.parent = itemContainer.transform;
 
         transform.localPosition = new Vector3(0, 0, 0);
@@ -39,7 +38,6 @@ public class IpadController : MonoBehaviour, IInteractable
         itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
     }
 
-    [PunRPC]
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("player");
@@ -51,7 +49,6 @@ public class IpadController : MonoBehaviour, IInteractable
         itemContainer = player.transform.GetChild(0).gameObject;
     }
 
-    [PunRPC]
     void Update()
     {
         isUsed = player.GetComponent<PlayerController>().isUsingSmartphone;
