@@ -107,8 +107,10 @@ GameObject:
   - component: {fileID: 3656322382870639004}
   - component: {fileID: 3656322382870638995}
   - component: {fileID: 3656322382870639005}
+  - component: {fileID: 3424800849348218932}
+  - component: {fileID: 765488520413835847}
   m_Layer: 0
-  m_Name: PentaRoomSwitch
+  m_Name: RoomSwitch
   m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,6 +177,45 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3426857, y: 1, z: 1}
   m_Center: {x: 0.10173416, y: 0, z: 0}
+--- !u!114 &3424800849348218932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656322382870638993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 765488520413835847}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &765488520413835847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656322382870638993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &3656322383181053931
 GameObject:
   m_ObjectHideFlags: 0
