@@ -294,6 +294,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 928500583}
     m_Modifications:
+    - target: {fileID: 3424800849348218932, guid: 95d725e4fed9ec4439d3650bbab42e43, type: 3}
+      propertyPath: sceneViewId
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3656322382870638993, guid: 95d725e4fed9ec4439d3650bbab42e43, type: 3}
       propertyPath: m_Name
       value: HallRoomSwitch
@@ -4710,6 +4714,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 928500583}
     m_Modifications:
+    - target: {fileID: 3424800849348218932, guid: 95d725e4fed9ec4439d3650bbab42e43, type: 3}
+      propertyPath: sceneViewId
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3656322382870638993, guid: 95d725e4fed9ec4439d3650bbab42e43, type: 3}
       propertyPath: m_Name
       value: BedRoomSwitch
@@ -7356,6 +7364,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 928500583}
     m_Modifications:
+    - target: {fileID: 3424800849348218932, guid: 95d725e4fed9ec4439d3650bbab42e43, type: 3}
+      propertyPath: sceneViewId
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 3656322382870638993, guid: 95d725e4fed9ec4439d3650bbab42e43, type: 3}
       propertyPath: m_Name
       value: GuestRoomSwitch
@@ -7944,6 +7956,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7655510814760187892}
     m_Modifications:
+    - target: {fileID: 669660413052244371, guid: 9d0ba553fbab9c748ac1d0007c7b8fe0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 669660413319209997, guid: 9d0ba553fbab9c748ac1d0007c7b8fe0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 670695940516285249, guid: 9d0ba553fbab9c748ac1d0007c7b8fe0, type: 3}
       propertyPath: glasses.Array.size
       value: 2
@@ -8087,6 +8107,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7655510814760187892}
     m_Modifications:
+    - target: {fileID: 669660413052244371, guid: 9d0ba553fbab9c748ac1d0007c7b8fe0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 669660413319209997, guid: 9d0ba553fbab9c748ac1d0007c7b8fe0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 670695941175612830, guid: 9d0ba553fbab9c748ac1d0007c7b8fe0, type: 3}
       propertyPath: m_Name
       value: WindowL
@@ -8250,6 +8278,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 928500583}
     m_Modifications:
+    - target: {fileID: 3424800849348218932, guid: 95d725e4fed9ec4439d3650bbab42e43, type: 3}
+      propertyPath: sceneViewId
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3656322382870638993, guid: 95d725e4fed9ec4439d3650bbab42e43, type: 3}
       propertyPath: m_Name
       value: PentaRoomSwitch
