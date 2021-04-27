@@ -12,7 +12,7 @@ public class WindowController : MonoBehaviour, IInteractable
         GameObject Window;
     Animator anim1;
 
-    public bool isOpen;
+    public bool isOpen { get; private set; }
 
     public void Interact()
     {
