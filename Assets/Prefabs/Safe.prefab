@@ -1018,7 +1018,9 @@ GameObject:
   - component: {fileID: 4310817446105170489}
   - component: {fileID: 4137815305526503207}
   - component: {fileID: 8961231402348909149}
-  - component: {fileID: 7108640829444942041}
+  - component: {fileID: 9170558739860024854}
+  - component: {fileID: 7827963791535361767}
+  - component: {fileID: 7849521288347040038}
   m_Layer: 0
   m_Name: DoorFull
   m_TagString: object
@@ -1054,8 +1056,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.1}
-  m_Center: {x: 0.5, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.7, z: 0.1}
+  m_Center: {x: 0.5, y: -0.16, z: -0.05}
 --- !u!95 &8961231402348909149
 Animator:
   serializedVersion: 3
@@ -1075,7 +1077,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7108640829444942041
+--- !u!114 &9170558739860024854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1092,6 +1094,45 @@ MonoBehaviour:
   num3: {fileID: 108052941}
   num4: {fileID: 767196405}
   audio1: {fileID: 6451497979076858943}
+--- !u!114 &7827963791535361767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524992274024198054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 7849521288347040038}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &7849521288347040038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524992274024198054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &644831467150371248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,7 +1951,7 @@ Transform:
   m_GameObject: {fileID: 1527792526168767612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1.2}
+  m_LocalScale: {x: 4, y: 4, z: 2}
   m_Children:
   - {fileID: 644831468256538643}
   - {fileID: 93357432730704993}

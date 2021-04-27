@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using System;
 
 public class WindowController : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameObject Window;
+    PhotonView photonView;
+
+    [SerializeField]
+        GameObject Window;
     Animator anim1;
 
     public bool isOpen;
@@ -13,11 +17,17 @@ public class WindowController : MonoBehaviour, IInteractable
     public void Interact()
     {
         anim1 = GetComponent<Animator>();
-        if (anim1.enabled == false) Open();
+        if (anim1.enabled == false)
+        {
+            photonView = GetComponent<PhotonView>();
+            photonView.RPC("Open", RpcTarget.All);
+        }
     }
 
+    [PunRPC]
     public void Open()
     {
+        anim1 = GetComponent<Animator>();
         anim1.enabled = true;
         Invoke("Stop", 1.01f);
     }

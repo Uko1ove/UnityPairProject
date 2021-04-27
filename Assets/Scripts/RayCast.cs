@@ -28,7 +28,6 @@ public class RayCast : MonoBehaviour
 
         RaycastHit hit;
 
-        Debug.DrawRay(transform.position, ray.direction * rayDistance);
         if(Input.GetMouseButtonDown(0) )
         {
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.tag == "object")
