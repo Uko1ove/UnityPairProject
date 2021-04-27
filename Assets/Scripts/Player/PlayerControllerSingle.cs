@@ -18,6 +18,9 @@ public class PlayerControllerSingle : MonoBehaviour
     private float mouseY;
     private float cameraRotation;
     private float rotationX = 0f;
+    private Rigidbody rigidBody;
+    private Transform objectTransform;
+    private Vector3 direction, position;
     public bool isUsingSmartphone;
 
     public bool IsScreenBlocked
@@ -32,6 +35,9 @@ public class PlayerControllerSingle : MonoBehaviour
         smartphone = GameObject.FindGameObjectWithTag("ipad");
         IsScreenBlocked = true;
         isUsingSmartphone = false;
+        rigidBody = GetComponent<Rigidbody>();
+        objectTransform = GetComponent<Transform>();
+        position = objectTransform.position;
     }
 
     void Update()
@@ -41,7 +47,7 @@ public class PlayerControllerSingle : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
-
+        
         if (isUsingSmartphone == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
@@ -68,6 +74,5 @@ public class PlayerControllerSingle : MonoBehaviour
         {
             // Отображение внутриигрового меню: Save, Load, Exit
         }
-
     }
 }

@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class LanguageButton : MonoBehaviour
 {
-    public GameObject goOut_0;
+    [SerializeField] GameObject settingsMenu;
+    [SerializeField] GameObject languageMenu;
+    /*public GameObject goOut_0;
     public GameObject goOut_1;
     public GameObject goOut_2;
 
     public GameObject goIn_0;
-    public GameObject goIn_1;
+    public GameObject goIn_1;*/
 
-    public void LanguageSetting()
+    public void ToggleLanguageMenu()
     {
-        Text text1 = GetComponentInChildren<Text>();
+        settingsMenu.SetActive(!settingsMenu.activeSelf);
+        languageMenu.SetActive(!languageMenu.activeSelf);
+        /*Text text1 = GetComponentInChildren<Text>();
 
         if (goOut_0.activeInHierarchy == true)
         {
@@ -37,6 +41,6 @@ public class LanguageButton : MonoBehaviour
 
             goIn_0.SetActive(false);
             goIn_1.SetActive(false);
-        }
+        }*/
     }
 }
