@@ -49,14 +49,11 @@ public class PlayerControllerSingle : MonoBehaviour
         ipadRotation = smartphone.transform.rotation;
         ipadScale = smartphone.transform.localScale;
         IsScreenBlocked = screenOff.activeSelf;
-        IsScreenLocked = true;
         isUsingSmartphone = false;
 
-        isUsingSmartphone = false;
         ipadPosition = smartphone.transform.position;
         ipadRotation = smartphone.transform.rotation;
         ipadScale = smartphone.transform.localScale;
-        //isScreenBlocked = true;
     }
 
     void Update()
@@ -66,14 +63,6 @@ public class PlayerControllerSingle : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
-
-        transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
-        transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed * vertical);
-        transform.Rotate(Vector3.up * mouseSpeed * Time.deltaTime * mouseX);
-
-        rotationX += mouseY * mouseSpeed * Time.deltaTime;
-        rotationX = Mathf.Clamp(rotationX, -30, 30);
-        mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
 
         if (isUsingSmartphone == false)
         {
@@ -89,10 +78,7 @@ public class PlayerControllerSingle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
         {
             IsScreenBlocked = !IsScreenBlocked;
-            /*if (IsScreenBlocked == false)
-            {
-                IsScreenLocked = true;
-            }*/
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isUsingSmartphone == true)

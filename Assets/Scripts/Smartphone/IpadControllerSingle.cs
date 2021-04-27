@@ -12,7 +12,7 @@ public class IpadControllerSingle : MonoBehaviour
 
     private float sliderValue;
     private bool isScreenBlocked;
-    private bool isIpadLocked;
+    //private bool isIpadLocked;
     
 
     public GameObject ScreenOff
@@ -46,25 +46,21 @@ public class IpadControllerSingle : MonoBehaviour
         isScreenBlocked = player.GetComponent<PlayerControllerSingle>().IsScreenBlocked;
         //screenOff.SetActive(isScreenBlocked);
         sliderValue = slider.GetComponent<Slider>().value;
-        isIpadLocked = player.GetComponent<PlayerControllerSingle>().IsScreenLocked;
+        //isIpadLocked = player.GetComponent<PlayerControllerSingle>().IsScreenLocked;
+        screenOff.SetActive(isScreenBlocked);
 
-        if (isScreenBlocked == false)
+        if (sliderValue >= 0.85)
         {
-            screenOff.SetActive(false);
-
-            if (sliderValue >= 0.85)
-            {
-                screenOnLocked.SetActive(false);
-            }
-            else
-            {
-                screenOnLocked.SetActive(true);
-            }
+            screenOnLocked.SetActive(false);
+        }
+        else
+        {
+            screenOnLocked.SetActive(true);
         }
 
-        if (isIpadLocked == true)
+        if (isScreenBlocked == true)
         {
-            screenOnLocked.SetActive(isIpadLocked);
+            screenOnLocked.SetActive(isScreenBlocked);
             slider.GetComponent<Slider>().value = 0;
         }
     }
