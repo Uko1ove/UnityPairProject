@@ -37,6 +37,7 @@ public class IpadController : MonoBehaviour, IInteractable
         itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
     }
 
+    [PunRPC]
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("player");
@@ -48,6 +49,7 @@ public class IpadController : MonoBehaviour, IInteractable
         itemContainer = player.transform.GetChild(0).gameObject;
     }
 
+    [PunRPC]
     void Update()
     {
         isUsed = player.GetComponent<PlayerController>().isUsingSmartphone;
