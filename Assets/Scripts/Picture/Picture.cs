@@ -12,7 +12,6 @@ public class Picture : MonoBehaviour, IInteractable
     {
         if (crystal.activeInHierarchy == true) 
         {
-            SwipePicture();
             photonView = GetComponent<PhotonView>();
             photonView.RPC("SwipePicture", RpcTarget.All);
         }
