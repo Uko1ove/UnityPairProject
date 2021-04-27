@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -10,9 +11,17 @@ public class RayCast : MonoBehaviour
     public float rayDistance;
     private bool isUsingSmart;
     private Camera cam;
+    PhotonView photonView;
 
     void Update()
     {
+        PhotonView photonView = GetComponent<PhotonView>();
+        photonView.RPC("Set", RpcTarget.All);
+    }
+
+    void Set()
+    {
+
         var playerController = player.GetComponent<PlayerController>();
         if (playerController != null)
         {
@@ -24,21 +33,21 @@ public class RayCast : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.tag == "object")
             {
                 var interactComponent = hit.collider.GetComponent<IInteractable>();
                 interactComponent.Interact();
             }
-            
+
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.name == "ipad")
             {
                 if (isUsingSmart == false)
                 {
                     var interactComponent = hit.collider.GetComponent<IInteractable>();
                     interactComponent.Interact();
-                    
+
                     isUsingSmart = true;
                     player.GetComponent<PlayerController>().isUsingSmartphone = isUsingSmart;
                 }
