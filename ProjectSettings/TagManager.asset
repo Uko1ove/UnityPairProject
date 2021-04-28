@@ -10,6 +10,7 @@ TagManager:
   - ipad
   - action
   - player
+  - item
   layers:
   - Default
   - TransparentFX

@@ -45,13 +45,12 @@ public class IpadController : MonoBehaviour, IInteractable
         ipadPosition = transform.position;
         ipadRotation = transform.rotation;
         ipadScale = transform.localScale;
-        itemContainer = player.transform.GetChild(0).gameObject;
-
+        itemContainer = GameObject.FindGameObjectWithTag("item");
     }
 
     void Update()
     {
-        isUsed = player.GetComponent<PlayerController>().isUsingSmartphone;
+       /* isUsed = player.GetComponent<PlayerController>().isUsingSmartphone;
         isScreenBlocked = player.GetComponent<PlayerController>().IsScreenBlocked;
         sliderValue = slider.GetComponent<Slider>().value;
         
@@ -83,6 +82,6 @@ public class IpadController : MonoBehaviour, IInteractable
             transform.position = ipadPosition;
             transform.rotation = ipadRotation;
             transform.localScale = ipadScale;
-        }
+        }*/
     }
 }
