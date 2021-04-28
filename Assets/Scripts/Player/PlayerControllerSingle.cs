@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControllerSingle : MonoBehaviour
 {
+    [SerializeField] GameObject Panel; 
     public Camera mainCamera;
     private GameObject smartphone;
 
@@ -48,7 +49,7 @@ public class PlayerControllerSingle : MonoBehaviour
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
         
-        if (isUsingSmartphone == false)
+        if (isUsingSmartphone == false && Panel.activeInHierarchy == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed * vertical);
@@ -72,7 +73,7 @@ public class PlayerControllerSingle : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Отображение внутриигрового меню: Save, Load, Exit
+            Panel.SetActive(!Panel.activeInHierarchy);
         }
     }
 }
