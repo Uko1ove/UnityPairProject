@@ -26,7 +26,7 @@ public class MenuButton : MonoBehaviour
 
     public void ResetProgress()
     {
-        PlayerPrefs.SetString("player", "5 -0.05 26");
+        PlayerPrefs.SetString("player", "5 -26 0");
         PlayerPrefs.SetString("invent", "00000");
         PlayerPrefs.Save();
     }
