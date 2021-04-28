@@ -31,17 +31,20 @@ public class IpadController : MonoBehaviour, IInteractable
         itemContainer.transform.localPosition = new Vector3(0, 1.65f, 0.35f);
         itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
 
-        photonView.RPC("OthersTakeIpad", RpcTarget.OthersBuffered);
+        photonView.RPC("OthersTakeIpad", RpcTarget.All);
     }
 
     [PunRPC]
     void OthersTakeIpad()
     {
-        // спросить у ¬адима, почему Others примен€етс€ к самому себе.
-        transform.localPosition = new Vector3(0, -5, 0);
-        transform.localRotation = Quaternion.identity;
-        //itemContainer.transform.localPosition = new Vector3(0, -5, 0);
-        //itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        if (!player.GetComponent<PhotonView>().IsMine)
+        {
+            transform.localPosition = new Vector3(0, -5, 0);
+            transform.localRotation = Quaternion.identity;
+            //itemContainer.transform.localPosition = new Vector3(0, -5, 0);
+            //itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
+
     }
 
     void Start()
