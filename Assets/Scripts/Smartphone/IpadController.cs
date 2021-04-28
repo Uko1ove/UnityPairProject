@@ -23,18 +23,24 @@ public class IpadController : MonoBehaviour, IInteractable
     public void Interact()
     {
         photonView = GetComponent<PhotonView>();
-        photonView.RPC("TakeIpad", RpcTarget.All);
-    }
 
-    [PunRPC]
-    void TakeIpad()
-    {
         transform.parent = itemContainer.transform;
 
         transform.localPosition = new Vector3(0, 0, 0);
         transform.localRotation = Quaternion.identity;
         itemContainer.transform.localPosition = new Vector3(0, 1.65f, 0.35f);
         itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
+
+        photonView.RPC("OthersTakeIpad", RpcTarget.Others);
+    }
+
+    [PunRPC]
+    void OthersTakeIpad()
+    {
+        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localRotation = Quaternion.identity;
+        itemContainer.transform.localPosition = new Vector3(0, -5, 0);
+        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 
     void Start()
@@ -50,10 +56,10 @@ public class IpadController : MonoBehaviour, IInteractable
 
     void Update()
     {
-       /* isUsed = player.GetComponent<PlayerController>().isUsingSmartphone;
+      /*  isUsed = player.GetComponent<PlayerController>().isUsingSmartphone;
         isScreenBlocked = player.GetComponent<PlayerController>().IsScreenBlocked;
         sliderValue = slider.GetComponent<Slider>().value;
-        
+
         if (isUsed)
         {
             screenOff.SetActive(isScreenBlocked);
