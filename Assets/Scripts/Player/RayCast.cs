@@ -13,11 +13,7 @@ public class RayCast : MonoBehaviour
 
     void Update()
     {
-        var playerController = player.GetComponent<PlayerController>();
-        if (playerController != null)
-        {
-            isUsingSmart = playerController.isUsingSmartphone;
-        }
+        
         cam = GetComponent<Camera>();
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(transform.position, ray.direction * rayDistance);
@@ -34,13 +30,14 @@ public class RayCast : MonoBehaviour
             
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.name == "ipad")
             {
-                if (isUsingSmart == false)
+                bool iPadController = hit.collider.GetComponent<IpadController>().isUsed;
+
+                if (iPadController == false)
                 {
                     var interactComponent = hit.collider.GetComponent<IInteractable>();
                     interactComponent.Interact();
-                    
-                    isUsingSmart = true;
-                    player.GetComponent<PlayerController>().isUsingSmartphone = isUsingSmart;
+
+                    hit.collider.GetComponent<IpadController>().isUsed = true;
                 }
             }
         }
