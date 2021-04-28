@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueButton: {fileID: 984528145}
+  continueText: {fileID: 2024760886}
 --- !u!1 &51305701
 GameObject:
   m_ObjectHideFlags: 0
