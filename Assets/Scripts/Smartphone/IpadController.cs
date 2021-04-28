@@ -67,7 +67,7 @@ public class IpadController : MonoBehaviour, IInteractable
             screenOff.SetActive(isScreenBlocked);
         }
 
-        if (Input.GetKeyDown(KeyCode.RightAlt) && isUsed == true)
+        if (Input.GetKeyDown(KeyCode.LeftAlt) && isUsed == true)
         {
             photonView.RPC("PutIpad", RpcTarget.All);
         }
