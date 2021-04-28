@@ -37,10 +37,10 @@ public class IpadController : MonoBehaviour, IInteractable
     [PunRPC]
     void OthersTakeIpad()
     {
-        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localPosition = new Vector3(0, -5, 0);
         transform.localRotation = Quaternion.identity;
-        itemContainer.transform.localPosition = new Vector3(0, -5, 0);
-        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        //itemContainer.transform.localPosition = new Vector3(0, -5, 0);
+        //itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 
     void Start()
