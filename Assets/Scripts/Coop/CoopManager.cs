@@ -6,7 +6,7 @@ using Photon.Realtime;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LeftGameCoop : MonoBehaviourPunCallbacks
+public class CoopManager : MonoBehaviourPunCallbacks
 {
     public GameObject PlayerPref;
     public GameObject Panel;
@@ -17,7 +17,7 @@ public class LeftGameCoop : MonoBehaviourPunCallbacks
 
     void Awake()
     {
-        PhotonNetwork.Instantiate(PlayerPref.name, new Vector3(-22,0,1), Quaternion.identity );
+        PhotonNetwork.Instantiate(PlayerPref.name, new Vector3(5,-0.05f,-26), Quaternion.identity );
     }
 
     private void Start()

@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Panel = GameObject.FindGameObjectWithTag("link_panel");
-            Panel = Panel.GetComponent<LeftGameCoop>().Panel;
+            Panel = Panel.GetComponent<CoopManager>().Panel;
             Panel.SetActive(!Panel.activeInHierarchy);
         }
     }
