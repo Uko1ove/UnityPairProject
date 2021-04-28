@@ -10,6 +10,7 @@ public class IpadController : MonoBehaviour, IInteractable
     [SerializeField] GameObject screenOff;
     [SerializeField] GameObject screenOnLocked;
     [SerializeField] GameObject slider;
+    [SerializeField] GameObject activeObjects;
     PhotonView photonView;
 
     private GameObject itemContainer;
@@ -37,12 +38,8 @@ public class IpadController : MonoBehaviour, IInteractable
     [PunRPC]
     void OthersTakeIpad()
     {
-
-            transform.localPosition = new Vector3(0, 0, 0);
-            transform.localRotation = Quaternion.identity;
-            //itemContainer.transform.localPosition = new Vector3(0, 0, 0);
-            //itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
-
+        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localRotation = Quaternion.identity;
     }
 
     void Start()
@@ -79,7 +76,7 @@ public class IpadController : MonoBehaviour, IInteractable
     [PunRPC]
     private void PutIpad()
     {
-        transform.parent = null;
+        transform.parent = activeObjects.transform;
         transform.position = ipadPosition;
         transform.rotation = ipadRotation;
         transform.localScale = ipadScale;
