@@ -82,10 +82,9 @@ public class IpadController : MonoBehaviour, IInteractable
         transform.position = ipadPosition;
         transform.rotation = ipadRotation;
         transform.localScale = ipadScale;
-        isScreenBlocked = !isScreenBlocked;
+        isScreenBlocked = true;
         isUsed = false;
         player.GetComponent<PlayerController>().isUsingSmartphone = false;
-        isScreenBlocked = !isScreenBlocked;
         screenOff.SetActive(isScreenBlocked);
     }
 }
