@@ -1,4 +1,5 @@
 using System.Collections;
+using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
@@ -45,5 +46,10 @@ public class MenuInGame : MonoBehaviour
     public void Exit()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void ExitCoop()
+    {
+        PhotonNetwork.LeaveRoom();
     }
 }

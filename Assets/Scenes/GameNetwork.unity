@@ -5224,6 +5224,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2538442359459226364, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764727666119890233, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1482035105}
+    - target: {fileID: 4764727666119890233, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitCoop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764727666119890233, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuInGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764727666119890233, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6207197452384214316, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -5840,6 +5860,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1482035105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2538442359459226364, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+  m_PrefabInstance: {fileID: 1482035097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9a9ac096003bf428b0ee38848d37f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1482277042
 GameObject:
   m_ObjectHideFlags: 0
