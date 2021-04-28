@@ -7,11 +7,11 @@ public class MenuButton : MonoBehaviour
 {
     public void New()
     {
+        ResetProgress();
         SceneManager.LoadScene("GameSingle");
     }
     public void Continue()
     {
-        // загрузка из Pref
         SceneManager.LoadScene("GameSingle");
     }
 
@@ -22,5 +22,12 @@ public class MenuButton : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void ResetProgress()
+    {
+        PlayerPrefs.SetString("player", "5 -0.05 26");
+        PlayerPrefs.SetString("invent", "00000");
+        PlayerPrefs.Save();
     }
 }

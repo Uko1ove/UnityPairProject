@@ -3479,6 +3479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7267ed4991473db4a8e18914f95ca00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Panel: {fileID: 0}
   mainCamera: {fileID: 637148312726405539}
   isUsingSmartphone: 0
 --- !u!114 &8872445359487490674
