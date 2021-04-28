@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class LeftGameCoop : MonoBehaviourPunCallbacks
 {
     public GameObject PlayerPref;
+    public GameObject Panel;
     GameObject action;
 
     void Awake()

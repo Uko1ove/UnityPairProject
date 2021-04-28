@@ -226,6 +226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 6207197452384214316}
+  Player: {fileID: 0}
+  Slots: []
 --- !u!1 &5922367835035901680
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 0}
+  Player: {fileID: 0}
+  Slots: []
 --- !u!1 &6207197452384214316
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +390,7 @@ GameObject:
   - component: {fileID: 1297802570822007368}
   m_Layer: 5
   m_Name: MenuPanel
-  m_TagString: Untagged
+  m_TagString: panel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,6 +681,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 0}
+  Player: {fileID: 0}
+  Slots: []
 --- !u!1 &7132281668278905356
 GameObject:
   m_ObjectHideFlags: 0

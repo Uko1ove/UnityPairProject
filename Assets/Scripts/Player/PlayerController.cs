@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    GameObject Panel;
     public Camera mainCamera;
     private GameObject smartphone;
 
@@ -72,6 +73,10 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
-            PhotonNetwork.LeaveRoom();
+        {
+            Panel = GameObject.FindGameObjectWithTag("link_panel");
+            Panel = Panel.GetComponent<LeftGameCoop>().Panel;
+            Panel.SetActive(!Panel.activeInHierarchy);
+        }
     }
 }
