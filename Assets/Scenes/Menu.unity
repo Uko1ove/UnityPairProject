@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &51305704
@@ -496,7 +497,6 @@ GameObject:
   - component: {fileID: 236813076}
   - component: {fileID: 236813075}
   - component: {fileID: 236813078}
-  - component: {fileID: 236813074}
   m_Layer: 5
   m_Name: Click
   m_TagString: Untagged
@@ -524,19 +524,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &236813074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236813072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77d5724d21dcd3943b983bae2e4883eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text1: {fileID: 1675100313}
 --- !u!114 &236813075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,7 +568,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236813074}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Sound, Assembly-CSharp
         m_MethodName: SetSound
         m_Mode: 1
@@ -655,6 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 1675100313}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!1 &256356199
@@ -820,6 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &308689035
@@ -1167,6 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!1 &375489598
@@ -1361,7 +1351,7 @@ RectTransform:
   m_Children:
   - {fileID: 316894879}
   m_Father: {fileID: 1569964779}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4, y: 0.03837037}
   m_AnchorMax: {x: 0.6, y: 0.101}
@@ -1500,6 +1490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!1 &468358147
@@ -1770,6 +1761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &635353319
@@ -2131,6 +2123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!1 &762730384
@@ -2200,6 +2193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &762730388
@@ -2754,6 +2748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!1 &997686757
@@ -3336,6 +3331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!1 &1158924115
@@ -3512,7 +3508,7 @@ RectTransform:
   - {fileID: 289872872}
   - {fileID: 1961081656}
   m_Father: {fileID: 1569964779}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4024792, y: 0.142}
   m_AnchorMax: {x: 0.6, y: 0.20511115}
@@ -3713,6 +3709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &1295450025
@@ -4033,6 +4030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &1325367211
@@ -4207,6 +4205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &1359761801
@@ -4446,6 +4445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &1417595642
@@ -4608,6 +4608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &1442636138
@@ -4965,6 +4966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &1480593534
@@ -5470,6 +5472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!1 &1569964778
@@ -5503,8 +5506,8 @@ RectTransform:
   m_Children:
   - {fileID: 1654226422}
   - {fileID: 236813073}
-  - {fileID: 454751568}
   - {fileID: 1212205725}
+  - {fileID: 454751568}
   m_Father: {fileID: 1278352220}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5564,7 +5567,6 @@ GameObject:
   - component: {fileID: 1654226425}
   - component: {fileID: 1654226424}
   - component: {fileID: 1654226427}
-  - component: {fileID: 1654226423}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -5592,19 +5594,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1654226423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654226421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77d5724d21dcd3943b983bae2e4883eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text1: {fileID: 1158924117}
 --- !u!114 &1654226424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5649,7 +5638,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1654226423}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Sound, Assembly-CSharp
         m_MethodName: SetSound
         m_Mode: 1
@@ -5735,6 +5724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 1158924117}
   audio1: {fileID: 997686759}
   audio2: {fileID: 1115959593}
 --- !u!1 &1675100311
@@ -6224,6 +6214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346f77105a5344a438cf111d35b2c577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textButton: {fileID: 0}
   audio1: {fileID: 997686759}
   audio2: {fileID: 0}
 --- !u!114 &2134722881
