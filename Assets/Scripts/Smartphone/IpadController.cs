@@ -58,20 +58,25 @@ public class IpadController : MonoBehaviour, IInteractable
     {
         if (Input.GetKeyDown(KeyCode.LeftControl) && isUsed == true)
         {
+            if(isScreenBlocked == false)
+            {
+                screenOnLocked.SetActive(true);
+                slider.GetComponent<Slider>().value = 0;
+
+            }
             isScreenBlocked = !isScreenBlocked;
+            screenOff.SetActive(isScreenBlocked);
         }
 
         if (Input.GetKeyDown(KeyCode.RightAlt) && isUsed == true)
         {
-            //player.GetComponent<PlayerController>().IsScreenBlocked = true;
-            
             photonView.RPC("PutIpad", RpcTarget.All);
         }
-      /*  isUsed = player.GetComponent<PlayerController>().isUsingSmartphone;
-        isScreenBlocked = player.GetComponent<PlayerController>().IsScreenBlocked;
-        sliderValue = slider.GetComponent<Slider>().value;
+        
+        
+        
 
-        if (isUsed)
+        /*if (isUsed)
         {
             screenOff.SetActive(isScreenBlocked);
 
@@ -110,5 +115,6 @@ public class IpadController : MonoBehaviour, IInteractable
         transform.rotation = ipadRotation;
         transform.localScale = ipadScale;
         isScreenBlocked = !isScreenBlocked;
+        player.GetComponent<PlayerController>().isUsingSmartphone = false;
     }
 }

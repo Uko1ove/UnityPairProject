@@ -38,6 +38,7 @@ public class RayCast : MonoBehaviour
                     interactComponent.Interact();
 
                     hit.collider.GetComponent<IpadController>().isUsed = true;
+                    player.GetComponent<PlayerController>().isUsingSmartphone = true;
                 }
             }
         }

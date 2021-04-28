@@ -61,17 +61,6 @@ public class PlayerController : MonoBehaviour
             mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
         }
 
-        /*if (Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
-        {
-            IsScreenBlocked = !IsScreenBlocked;
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightAlt) && isUsingSmartphone == true)
-        {
-            IsScreenBlocked = true;
-            //isUsingSmartphone = false;
-        }*/
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Panel = GameObject.FindGameObjectWithTag("link_panel");
