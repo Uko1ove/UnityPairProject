@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class MenuButton : MonoBehaviour
 {
-    public void New()
+    [SerializeField] GameObject ContinueButton;
+    public void NewGame()
     {
         ResetProgress();
         SceneManager.LoadScene("GameSingle");
     }
-    public void Continue()
+    public void ContinueGame()
     {
         SceneManager.LoadScene("GameSingle");
     }
@@ -29,5 +30,7 @@ public class MenuButton : MonoBehaviour
         PlayerPrefs.SetString("player", "5 -26 0");
         PlayerPrefs.SetString("invent", "00000");
         PlayerPrefs.Save();
+
+        try { ContinueButton.SetActive(false); } catch { }
     }
 }
