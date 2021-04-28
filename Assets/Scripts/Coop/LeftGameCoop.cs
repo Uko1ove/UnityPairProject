@@ -13,8 +13,6 @@ public class LeftGameCoop : MonoBehaviourPunCallbacks
     GameObject action;
     [SerializeField] Text wallText;
 
-    string eng;
-    string rus;
     string language;
 
     void Awake()
@@ -24,17 +22,16 @@ public class LeftGameCoop : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        eng = "The chamber of secrets has been opened. Enemies of the heir... Beware.";
-        rus = "Тайная комната снова открыта. Трепещите враги наследника.";
+ 
         language = PlayerPrefs.GetString("local", "eng");
 
         if (language == "eng")
         {
-            wallText.text = eng;
+            wallText.text = "The chamber of secrets has been opened. Enemies of the heir... Beware.";
         }
         else
         {
-            wallText.text = rus;
+            wallText.text = "Тайная комната снова открыта. Трепещите враги наследника.";
         }
     }
 

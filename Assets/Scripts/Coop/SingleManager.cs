@@ -12,8 +12,6 @@ public class SingleManager : MonoBehaviour
 
     string player;
     string invent;
-    string rus;
-    string eng;
     string language;
     
 
@@ -30,17 +28,15 @@ public class SingleManager : MonoBehaviour
         Player.transform.position = new Vector3(float.Parse(words[0]), -0.05f, float.Parse(words[1]));
         Player.transform.rotation = Quaternion.Euler(0, float.Parse(words[2]), 0);
 
-        eng = "The chamber of secrets has been opened. Enemies of the heir... Beware.";
-        rus = "Тайная комната снова открыта. Трепещите враги наследника.";
         language = PlayerPrefs.GetString("local", "eng");
 
         if(language == "eng")
         {
-            wallText.text = eng;
+            wallText.text = "The chamber of secrets has been opened. Enemies of the heir... Beware.";
         }
         else
         {
-            wallText.text = rus;
+            wallText.text = "Тайная комната снова открыта. Трепещите враги наследника.";
         }
     }
 
