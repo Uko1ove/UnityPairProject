@@ -37,13 +37,12 @@ public class IpadController : MonoBehaviour, IInteractable
     [PunRPC]
     void OthersTakeIpad()
     {
-        if (!player.GetComponent<PhotonView>().IsMine)
-        {
+
             transform.localPosition = new Vector3(0, 0, 0);
             transform.localRotation = Quaternion.identity;
             itemContainer.transform.localPosition = new Vector3(0, 0, 0);
             itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        }
+
     }
 
     void Start()
