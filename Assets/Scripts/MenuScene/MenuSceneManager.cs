@@ -28,7 +28,7 @@ public class MenuSceneManager : MonoBehaviour
 
     string language;
 
-    private void Start()
+    private void Awake()
     {
         string player = PlayerPrefs.GetString("player");
         string invent = PlayerPrefs.GetString("invent");
@@ -53,8 +53,8 @@ public class MenuSceneManager : MonoBehaviour
             backLanguageText.text = "Back";
 
             soundText.text = "Sound";
-            bgSoundText.text = "BackSound";
-            clickSoundText.text = "ClickSound";
+            bgSoundText.text = "BackSound On";
+            clickSoundText.text = "ClickSound On";
             backSoundText.text = "Back";
 
             resetText.text = "Reset Progress";

@@ -8,7 +8,7 @@ public class AudioEvent : MonoBehaviour
     public Text text1;
     public Text text2;
     public AudioSource audioBG;
-    public void Awake()
+    public void Start()
     {
         string text;
         text = PlayerPrefs.GetString("Click", "false");
