@@ -115,6 +115,7 @@ public class IpadController : MonoBehaviour, IInteractable
         transform.rotation = ipadRotation;
         transform.localScale = ipadScale;
         isScreenBlocked = !isScreenBlocked;
+        isUsed = false;
         player.GetComponent<PlayerController>().isUsingSmartphone = false;
     }
 }
