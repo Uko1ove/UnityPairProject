@@ -37,6 +37,7 @@ public class IpadController : MonoBehaviour, IInteractable
     [PunRPC]
     void OthersTakeIpad()
     {
+        // спросить у ¬адима, почему Others примен€етс€ к самому себе.
         transform.localPosition = new Vector3(0, -5, 0);
         transform.localRotation = Quaternion.identity;
         //itemContainer.transform.localPosition = new Vector3(0, -5, 0);
@@ -72,39 +73,6 @@ public class IpadController : MonoBehaviour, IInteractable
         {
             photonView.RPC("PutIpad", RpcTarget.All);
         }
-        
-        
-        
-
-        /*if (isUsed)
-        {
-            screenOff.SetActive(isScreenBlocked);
-
-            if (sliderValue >= 0.85)
-            {
-                screenOnLocked.SetActive(false);
-            }
-            else
-            {
-                screenOnLocked.SetActive(true);
-            }
-
-            if (isScreenBlocked == true)
-            {
-                screenOnLocked.SetActive(isScreenBlocked);
-                slider.GetComponent<Slider>().value = 0;
-            }
-
-        }
-        else
-        {
-            screenOff.SetActive(isScreenBlocked);
-            screenOnLocked.SetActive(true);
-            transform.parent = null;
-            transform.position = ipadPosition;
-            transform.rotation = ipadRotation;
-            transform.localScale = ipadScale;
-        }*/
     }
 
     [PunRPC]
@@ -117,5 +85,7 @@ public class IpadController : MonoBehaviour, IInteractable
         isScreenBlocked = !isScreenBlocked;
         isUsed = false;
         player.GetComponent<PlayerController>().isUsingSmartphone = false;
+        isScreenBlocked = !isScreenBlocked;
+        screenOff.SetActive(isScreenBlocked);
     }
 }
