@@ -168,6 +168,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ContinueButton: {fileID: 984528145}
   continueText: {fileID: 2024760886}
+  newGameText: {fileID: 375489600}
+  coopText: {fileID: 1871992501}
+  serverText: {fileID: 1524249684}
+  clientText: {fileID: 1480859996}
+  settingsText: {fileID: 1473813543}
+  exitText: {fileID: 381620089}
+  languageText: {fileID: 803407239}
+  engText: {fileID: 1305731928}
+  rusText: {fileID: 160825266}
+  backLanguageText: {fileID: 1058724709}
+  soundText: {fileID: 877983646}
+  bgSoundText: {fileID: 1158924117}
+  clickSoundText: {fileID: 1675100313}
+  backSoundText: {fileID: 316894880}
+  resetText: {fileID: 2147241389}
+  yesText: {fileID: 1471615316}
+  noText: {fileID: 656484152}
+  backSettingsText: {fileID: 1417218733}
 --- !u!1 &51305701
 GameObject:
   m_ObjectHideFlags: 0
