@@ -22,13 +22,12 @@ public class IpadController : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-
         photonView = GetComponent<PhotonView>();
-        photonView.RPC("OtherTakeIpad", RpcTarget.Others);
+        photonView.RPC("TakeIpad", RpcTarget.All);
     }
 
     [PunRPC]
-    void OtherTakeIpad()
+    void TakeIpad()
     {
         transform.parent = itemContainer.transform;
 
@@ -47,6 +46,7 @@ public class IpadController : MonoBehaviour, IInteractable
         ipadRotation = transform.rotation;
         ipadScale = transform.localScale;
         itemContainer = player.transform.GetChild(0).gameObject;
+
     }
 
     void Update()

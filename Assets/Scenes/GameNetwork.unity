@@ -8029,6 +8029,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: -804518406270984841, guid: 61e3139ab263253459e3410fdb5e8418, type: 3}
+      propertyPath: OwnershipTransfer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 145378512509498263, guid: 61e3139ab263253459e3410fdb5e8418, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8236,29 +8240,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8686192522498031325, guid: 31c46fc632a9ef94a95b0384570edd1d, type: 3}
   m_PrefabInstance: {fileID: 1349204815441849240}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3235514501527876487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7655510814760187893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 7005084855747574322}
-  sceneViewId: 3
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1001 &3656322383464190692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8324,22 +8305,6 @@ PrefabInstance:
       objectReference: {fileID: 996734290}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d725e4fed9ec4439d3650bbab42e43, type: 3}
---- !u!114 &7005084855747574322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7655510814760187893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1001 &7655510812878683331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9255,8 +9220,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7655510814760187892}
-  - component: {fileID: 3235514501527876487}
-  - component: {fileID: 7005084855747574322}
   m_Layer: 0
   m_Name: ActiveObjects
   m_TagString: action
