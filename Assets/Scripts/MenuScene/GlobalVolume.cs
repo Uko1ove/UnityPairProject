@@ -11,5 +11,8 @@ public class GlobalVolume : MonoBehaviour
     {
         float globalVolume = slider.GetComponent<Slider>().value;
         AudioListener.volume = globalVolume;
+
+        PlayerPrefs.SetFloat("Slider",globalVolume);
+        PlayerPrefs.Save();
     }
 }

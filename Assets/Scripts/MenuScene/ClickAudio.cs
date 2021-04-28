@@ -17,32 +17,31 @@ public class ClickAudio : MonoBehaviour
 
         if (textButton != null)
         {
-            switch (textButton.text)
+            if (textButton.text == "ClickSound")
             {
-                case "ClickSound On":
-                    textButton.text = "ClickSound Off";
+                if (text == "true")
                     PlayerPrefs.SetString("Click", "false");
-                    break;
-                case "ClickSound Off":
-                    textButton.text = "ClickSound On";
+                else
                     PlayerPrefs.SetString("Click", "true");
-                    break;
-                case "BackSound On":
-                    textButton.text = "BackSound Off";
-                    PlayerPrefs.SetString("BG", "false");
-                    break;
-                case "BackSound Off":
-                    textButton.text = "BackSound On";
-                    PlayerPrefs.SetString("BG", "true");
-                    break;
             }
-        }
-    }
 
-    public void BG()
-    {
-        string text = PlayerPrefs.GetString("BG", "true");
-        if (text == "true") audio2.Play();
-        else audio2.Stop();
+            if (textButton.text == "BackSound")
+            {
+                text = PlayerPrefs.GetString("BG", "true");
+
+                if (text == "true")
+                {
+                    PlayerPrefs.SetString("BG", "false");
+                    audio2.Stop();
+                }
+                else
+                {
+                    PlayerPrefs.SetString("BG", "true");
+                    audio2.Play();
+                }
+            }
+
+            PlayerPrefs.Save();
+        }
     }
 }

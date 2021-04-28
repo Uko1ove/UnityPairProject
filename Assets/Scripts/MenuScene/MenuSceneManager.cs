@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class MenuSceneManager : MonoBehaviour
 {
+    [SerializeField] AudioSource audioBG;
     public GameObject ContinueButton;
+    [SerializeField] GameObject Slider;
+
     [SerializeField] Text continueText;
     [SerializeField] Text newGameText;
     [SerializeField] Text coopText;
@@ -30,11 +33,22 @@ public class MenuSceneManager : MonoBehaviour
 
     private void Awake()
     {
+        //Загрузка настроек звука
+        string text = PlayerPrefs.GetString("BG", "false");
+        if (text == "true")
+            audioBG.Play();
+
+        float slider = PlayerPrefs.GetFloat("Slider", 1);
+        AudioListener.volume = slider;
+        Slider.GetComponent<Slider>().value = slider;
+
+        //Отображение кнопки Continue
         string player = PlayerPrefs.GetString("player");
         string invent = PlayerPrefs.GetString("invent");
 
         if (player == "5 -26 0" && invent == "00000") try { ContinueButton.SetActive(false); } catch { };
 
+        //Загрузка локализации
         language = PlayerPrefs.GetString("local", "eng");
 
         if (language == "eng")
@@ -53,8 +67,8 @@ public class MenuSceneManager : MonoBehaviour
             backLanguageText.text = "Back";
 
             soundText.text = "Sound";
-            bgSoundText.text = "BackSound On";
-            clickSoundText.text = "ClickSound On";
+            bgSoundText.text = "BackSound";
+            clickSoundText.text = "ClickSound";
             backSoundText.text = "Back";
 
             resetText.text = "Reset Progress";
