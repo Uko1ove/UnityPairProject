@@ -1,55 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
+using System;
 
-public class WindowController : MonoBehaviour
+public class WindowController : MonoBehaviour, IInteractable
 {
-    private Animation animat;
+    PhotonView photonView;
 
-    public bool IsWindowOpened
-    {
-        get; private set;
-    }
+    [SerializeField]
+        GameObject Window;
+    Animator anim1;
 
-    private void Start()
-    {
-        animat = gameObject.GetComponent<Animation>();
-        IsWindowOpened = false;
-    }
+    public bool isOpen { get; private set; }
 
-    public void ToggleWindow()
+    public void Interact()
     {
-        if(IsWindowOpened == false)
+        anim1 = GetComponent<Animator>();
+        if (anim1.enabled == false)
         {
-            OpenWindow(animat, "OpenRightWindow");
-            OpenWindow(animat, "OpenLeftWindow");
-            IsWindowOpened = true;
+            photonView = GetComponent<PhotonView>();
+            photonView.RPC("Open", RpcTarget.All);
         }
-        else
-        {
-            CloseWindow(animat, "CloseRightWindow");
-            CloseWindow(animat, "CloseLeftWindow");
-            IsWindowOpened = false;
-        }
-
     }
 
-    public void OpenWindow(Animation anim, string animName)
+    [PunRPC]
+    public void Open()
     {
-        var clip = anim.GetClip(animName);
-        anim.clip = clip;
-        anim.Play();
+        anim1 = GetComponent<Animator>();
+        anim1.enabled = true;
+        Invoke("Stop", 1.01f);
     }
 
-    public void CloseWindow(Animation anim, string animName)
+    void Stop()
     {
-        var clip = anim.GetClip(animName);
-        anim.clip = clip;
-        anim.Play();
-    }
-
-    public void StopAnimation()
-    {
-        gameObject.GetComponent<Animation>().Stop();
+        anim1.enabled = false;
+        if (Window.transform.rotation.eulerAngles.y > 45) isOpen = true;
+        else isOpen = false;
     }
 }

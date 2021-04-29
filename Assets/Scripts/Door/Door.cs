@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Door : MonoBehaviour, IInteractable
 {
+    PhotonView photonView;
+
     public GameObject HandleRotate;
     public GameObject FullDoor;
+
     public AudioSource audio1;
     public AudioSource audio2;
     public AudioSource audio3;
+
     public GameObject Key;
     public GameObject Crystal_1;
     public GameObject Crystal_2;
+
     Animator anim1;
     Animator anim2;
     bool trigger;
@@ -22,11 +28,19 @@ public class Door : MonoBehaviour, IInteractable
         anim1 = GetComponent<Animator>();
         anim2 = HandleRotate.GetComponent<Animator>();
 
-        if (anim1.enabled == false && anim2.enabled == false) Open();
+        if (anim1.enabled == false && anim2.enabled == false)
+        {
+            photonView = GetComponent<PhotonView>();
+            photonView.RPC("Open", RpcTarget.All);
+        }
     }
 
+    [PunRPC]
     void Open()
     {
+        anim1 = GetComponent<Animator>();
+        anim2 = HandleRotate.GetComponent<Animator>();
+
         trigger = false;
         switch (FullDoor.tag)
         {

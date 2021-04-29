@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 using UnityEngine.UI;
 
 public class OpenSafe : MonoBehaviour, IInteractable
@@ -9,28 +10,31 @@ public class OpenSafe : MonoBehaviour, IInteractable
     public Text num2;
     public Text num3;
     public Text num4;
-    public AudioSource audio1;
-    public GameObject HandleRotate;
 
+    public AudioSource audio1;
     Animator anim1;
-    Animator anim2;
+
+    PhotonView photonView;
 
     public void Interact()
     {
         anim1 = GetComponent<Animator>();
-        anim2 = HandleRotate.GetComponent<Animator>();
 
-        if (anim1.enabled == false && anim2.enabled == false) Open();
+        if (anim1.enabled == false)
+
+            //исправить на 1482
+            if (num1.text == "1" && num2.text == "0" && num3.text == "0" && num4.text == "0")
+            {
+                photonView = GetComponent<PhotonView>();
+                photonView.RPC("Open", RpcTarget.All);
+            }
     }
-    public void Open()
+
+    [PunRPC]
+    void Open()
     {
-        if (num1.text == "1" && num2.text == "4" && num3.text == "8" && num4.text == "2")
-        {
-            anim1.enabled = true;
-
-            anim2.enabled = true;
-
-            audio1.Play();
-        }
+        anim1 = GetComponent<Animator>();
+        anim1.enabled = true;
+        audio1.Play();
     }
 }

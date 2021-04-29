@@ -9,6 +9,9 @@ TagManager:
   - simple_door
   - ipad
   - action
+  - player
+  - item
+  - link_panel
   layers:
   - Default
   - TransparentFX

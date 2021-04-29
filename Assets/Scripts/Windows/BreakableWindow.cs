@@ -237,7 +237,7 @@ public class BreakableWindow : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (useCollision == true && col.gameObject.name != transform.parent.name)
+        if (useCollision == true && col.gameObject.name != "GlassFrame")
         {
             if (health > 0)
             {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class ButtonTV : MonoBehaviour, IInteractable
@@ -8,27 +9,36 @@ public class ButtonTV : MonoBehaviour, IInteractable
     public GameObject videoSource_0;
     public GameObject videoPlayer_1;
     public GameObject videoSource_1;
-    public GameObject go1;
-    private bool remote = false;
+
+    PhotonView photonView;
+
+    bool remote = false;
+    public GameObject ControllerTV;
     Animator anim1;
 
     public void Interact()
     {
         anim1 = GetComponent<Animator>();
-        if (anim1.enabled == false)  Play();
+
+        if (anim1.enabled == false)
+        {
+            photonView = GetComponent<PhotonView>();
+            photonView.RPC("Play", RpcTarget.All);
+        }
     }
 
+    [PunRPC]
     void Play()
     {
+        anim1 = GetComponent<Animator>();
         anim1.enabled = true;
-
-        if (go1.activeInHierarchy == true) remote = true;
 
         Invoke("VideoPlay", 2);
     }
 
     void VideoPlay()
     {
+        if (ControllerTV.activeInHierarchy == true) remote = true;
         anim1.enabled = false;
 
         switch (remote)

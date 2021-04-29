@@ -21,7 +21,7 @@ public class EnvironmentVolumeController : MonoBehaviour
     {
         foreach(var item in glassFrames)
         {
-            if (item.GetComponent<WindowController>().IsWindowOpened == true)
+            if (item.GetComponent<WindowController>().isOpen == true)
             {
                 if (isWindowOpened == true)
                 {
