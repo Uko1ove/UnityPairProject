@@ -14,7 +14,12 @@ public class SingleManager : MonoBehaviour
 
     [SerializeField] GameObject[] Slots;
     [SerializeField] GameObject[] Objects;
-    [SerializeField] Text wallText;
+
+    [SerializeField] Text WallText;
+    [SerializeField] Text SaveText;
+    [SerializeField] Text ReturnText;
+    [SerializeField] Text ExitText;
+    [SerializeField] Text DiscriptText;
 
     string soundBG;
     float slider;
@@ -55,11 +60,19 @@ public class SingleManager : MonoBehaviour
 
         if(language == "eng")
         {
-            wallText.text = "The chamber of secrets has been opened. Enemies of the heir... Beware.";
+            WallText.text = "The chamber of secrets has been opened. Enemies of the heir... Beware.";
+            SaveText.text = "Save";
+            ReturnText.text = "Return";
+            ExitText.text = "Exit";
+            DiscriptText.text = "Mouse LClick - Use\nLCtr - Unlock Ipad\nLAlt - Take / Put Ipad";
         }
         else
         {
-            wallText.text = "Тайная комната снова открыта. Трепещите враги наследника.";
+            WallText.text = "Тайная комната снова открыта. Трепещите враги наследника.";
+            SaveText.text = "Сохранить";
+            ReturnText.text = "Вернуться";
+            ExitText.text = "Выход";
+            DiscriptText.text = "Mouse LClick - Использ\nLCtr - Разблок Ipad\nLAlt - Взять/Полож Ipad";
         }
     }
 
