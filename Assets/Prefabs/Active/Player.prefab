@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8872445359487490673}
   itemContainer: {fileID: 637148313140535248}
-  rayDistance: 10
+  rayDistance: 15
 --- !u!1 &637148313140535248
 GameObject:
   m_ObjectHideFlags: 0

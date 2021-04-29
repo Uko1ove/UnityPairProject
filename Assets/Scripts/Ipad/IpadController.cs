@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class IpadController : MonoBehaviour, IInteractable
 {
+    public Camera Camera;
     [SerializeField] GameObject screenOff;
     [SerializeField] GameObject screenOnLocked;
     [SerializeField] GameObject slider;
@@ -24,12 +25,16 @@ public class IpadController : MonoBehaviour, IInteractable
     {
         photonView = GetComponent<PhotonView>();
 
+
         transform.parent = itemContainer.transform;
 
         transform.localPosition = new Vector3(0, 0, 0);
         transform.localRotation = Quaternion.identity;
-        itemContainer.transform.localPosition = new Vector3(0, 1.65f, 0.35f);
-        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
+
+        float py = 1.55f + (50 - Camera.transform.localRotation.eulerAngles.x) * 0.00357f;
+
+        itemContainer.transform.localPosition = new Vector3(0, py, 0.35f);
+        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(60, 0, 180));
 
         photonView.RPC("OthersTakeIpad", RpcTarget.Others);
     }

@@ -33,6 +33,7 @@ public class RayCast : MonoBehaviour
                 {
                     var interactComponent = hit.collider.GetComponent<IInteractable>();
                     interactComponent.Interact();
+                    hit.collider.GetComponent<IpadController>().Camera = gameObject.GetComponent<Camera>();
 
                     hit.collider.GetComponent<IpadController>().isUsed = true;
                 }

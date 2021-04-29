@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class IpadControllerSingle : MonoBehaviour, IInteractable
 {
     [SerializeField] GameObject screenOff;
+    [SerializeField] GameObject Camera;
     [SerializeField] GameObject screenOnLocked;
     [SerializeField] GameObject slider;
     [SerializeField] GameObject activeObjects;
@@ -23,8 +24,11 @@ public class IpadControllerSingle : MonoBehaviour, IInteractable
 
         transform.localPosition = new Vector3(0, 0, 0);
         transform.localRotation = Quaternion.identity;
-        itemContainer.transform.localPosition = new Vector3(0, 1.65f, 0.35f);
-        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
+
+        float py = 1.55f + (50 - Camera.transform.localRotation.eulerAngles.x) * 0.00357f;
+
+        itemContainer.transform.localPosition = new Vector3(0, py, 0.35f);
+        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(120, 0, 180));
     }
 
 

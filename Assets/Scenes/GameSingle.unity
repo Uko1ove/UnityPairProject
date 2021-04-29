@@ -4603,6 +4603,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100012, guid: 595cf544943e29a4d9a7b813e4218a3c, type: 3}
   m_PrefabInstance: {fileID: 1543629547}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1087883347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 637148312726405549, guid: e5cecce21259b9a41b6404b86e9a33bb, type: 3}
+  m_PrefabInstance: {fileID: 7596834656177065188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1091825760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8887182263329445834, guid: 058de653643687c4db059ed499c54862, type: 3}
@@ -9516,6 +9521,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6558375937770598093, guid: 7673a2ae0fb015c4795402b051bfeb1c, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1087883347}
+    - target: {fileID: 6558375937770598093, guid: 7673a2ae0fb015c4795402b051bfeb1c, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1087883347}
     - target: {fileID: 6558375937770598093, guid: 7673a2ae0fb015c4795402b051bfeb1c, type: 3}
       propertyPath: player
       value: 
