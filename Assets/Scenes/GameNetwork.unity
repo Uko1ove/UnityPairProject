@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 990147378}
-  m_IndirectSpecularColor: {r: 0.37213996, g: 0.37937525, b: 0.3567264, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731195, g: 0.3807401, b: 0.35872737, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5677,6 +5677,14 @@ PrefabInstance:
     - target: {fileID: 2538442359459226364, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
       propertyPath: Panel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711423135238486581, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711423135238486581, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4764727666119890233, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
