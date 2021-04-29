@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class SingleManager : MonoBehaviour
 {
-    [SerializeField] GameObject Panel;
     [SerializeField] GameObject Player;
+    [SerializeField] GameObject Cat;
     [SerializeField] GameObject[] Slots;
     [SerializeField] GameObject[] Objects;
     [SerializeField] Text wallText;
@@ -58,4 +58,9 @@ public class SingleManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        float Cat_xz = Cat.transform.position.x * Cat.transform.position.z;
+        Cat.GetComponent<AudioSource>().volume = 0.2f * (1 - Cat_xz/1500);
+    }
 }

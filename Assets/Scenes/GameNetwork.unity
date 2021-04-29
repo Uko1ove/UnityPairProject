@@ -5005,11 +5005,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 280790681}
-  - {fileID: 314245637}
-  - {fileID: 837602288}
-  - {fileID: 387098365}
   - {fileID: 1623477688}
+  - {fileID: 837602288}
   - {fileID: 150852355}
+  - {fileID: 387098365}
+  - {fileID: 314245637}
   - {fileID: 2122837457}
   - {fileID: 58555154}
   m_Father: {fileID: 1083949039}
@@ -8977,6 +8977,7 @@ MonoBehaviour:
   PlayerPref: {fileID: 6164641080919988684, guid: a0ebed95de2a52944852c8c29658123b, type: 3}
   Panel: {fileID: 1482035103}
   wallText: {fileID: 1581470999}
+  Cat: {fileID: 7655510813011087258}
 --- !u!4 &2047811585
 Transform:
   m_ObjectHideFlags: 0

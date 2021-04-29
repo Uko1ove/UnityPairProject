@@ -12,6 +12,8 @@ public class CoopManager : MonoBehaviourPunCallbacks
     public GameObject Panel;
     GameObject action;
     [SerializeField] Text wallText;
+    [SerializeField] GameObject Cat;
+
 
     string soundBG;
     float slider;
@@ -45,9 +47,10 @@ public class CoopManager : MonoBehaviourPunCallbacks
         }
     }
 
-    void Update()
+    private void Update()
     {
-
+        float Cat_xz = Cat.transform.position.x * Cat.transform.position.z;
+        Cat.GetComponent<AudioSource>().volume = 0.2f * (1 - Cat_xz / 1500);
     }
 
     public void Leave()
