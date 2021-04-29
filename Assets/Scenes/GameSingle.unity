@@ -8504,6 +8504,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 229167088}
   Cat: {fileID: 1167839553112969036}
+  TV: {fileID: 1153254229892359005}
+  Out_0: {fileID: 1153254229892359007}
+  Out_1: {fileID: 1153254229892359006}
   Slots:
   - {fileID: 1482035102}
   - {fileID: 1482035101}
@@ -9011,12 +9014,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4801498992084399389, guid: 3dd6e7223d057d34ba65ef59c832b0bd, type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.data[0]
+      value: 0.23
+      objectReference: {fileID: 0}
     - target: {fileID: 7336376405902171211, guid: 3dd6e7223d057d34ba65ef59c832b0bd, type: 3}
       propertyPath: ControllerTV
       value: 
       objectReference: {fileID: 1482035101}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd6e7223d057d34ba65ef59c832b0bd, type: 3}
+--- !u!1 &1153254229892359005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4801498990803986548, guid: 3dd6e7223d057d34ba65ef59c832b0bd, type: 3}
+  m_PrefabInstance: {fileID: 1153254229892359004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &1153254229892359006 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 4801498991086397918, guid: 3dd6e7223d057d34ba65ef59c832b0bd, type: 3}
+  m_PrefabInstance: {fileID: 1153254229892359004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &1153254229892359007 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 4801498992084399389, guid: 3dd6e7223d057d34ba65ef59c832b0bd, type: 3}
+  m_PrefabInstance: {fileID: 1153254229892359004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1167839553112969035
 PrefabInstance:
   m_ObjectHideFlags: 0

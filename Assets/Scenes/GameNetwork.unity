@@ -8845,10 +8845,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50995f639634f7046bdc9bb4618caaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cat: {fileID: 7655510813011087258}
+  TV: {fileID: 7655510813241240240}
+  Out_0: {fileID: 7655510813241240239}
+  Out_1: {fileID: 7655510813241240238}
   PlayerPref: {fileID: 6164641080919988684, guid: a0ebed95de2a52944852c8c29658123b, type: 3}
   Panel: {fileID: 1482035103}
   wallText: {fileID: 1581470999}
-  Cat: {fileID: 7655510813011087258}
 --- !u!4 &2047811585
 Transform:
   m_ObjectHideFlags: 0
@@ -9964,6 +9967,21 @@ PrefabInstance:
 --- !u!4 &7655510813241240237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4079876425313796994, guid: f2ecb4b8c8053c145b6ad5a5f4f7fdfe, type: 3}
+  m_PrefabInstance: {fileID: 7655510813241240236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &7655510813241240238 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 4079876425141542958, guid: f2ecb4b8c8053c145b6ad5a5f4f7fdfe, type: 3}
+  m_PrefabInstance: {fileID: 7655510813241240236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &7655510813241240239 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 4079876426172644589, guid: f2ecb4b8c8053c145b6ad5a5f4f7fdfe, type: 3}
+  m_PrefabInstance: {fileID: 7655510813241240236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7655510813241240240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4079876425313796993, guid: f2ecb4b8c8053c145b6ad5a5f4f7fdfe, type: 3}
   m_PrefabInstance: {fileID: 7655510813241240236}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7655510813448089346
