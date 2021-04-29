@@ -48,7 +48,7 @@ public class PlayerControllerSingle : MonoBehaviour
             transform.Rotate(Vector3.up * mouseSpeed * Time.deltaTime * mouseX);
 
             rotationX += mouseY * mouseSpeed * Time.deltaTime;
-            rotationX = Mathf.Clamp(rotationX, -30, 30);
+            rotationX = Mathf.Clamp(rotationX, -50, 30);
             mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
         }
 
