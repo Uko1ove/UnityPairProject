@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
             rotationX += mouseY * mouseSpeed * Time.deltaTime;
             rotationX = Mathf.Clamp(rotationX, -50, 30);
             mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
