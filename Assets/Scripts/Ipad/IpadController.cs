@@ -24,12 +24,13 @@ public class IpadController : MonoBehaviour, IInteractable
     {
         photonView = GetComponent<PhotonView>();
 
+
         transform.parent = itemContainer.transform;
 
         transform.localPosition = new Vector3(0, 0, 0);
         transform.localRotation = Quaternion.identity;
-        itemContainer.transform.localPosition = new Vector3(0, 1.65f, 0.35f);
-        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
+        itemContainer.transform.localPosition = new Vector3(0, 1.57f, 0.35f);
+        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(120, 0, 180));
 
         photonView.RPC("OthersTakeIpad", RpcTarget.Others);
     }

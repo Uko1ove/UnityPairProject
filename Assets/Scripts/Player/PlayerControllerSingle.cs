@@ -19,9 +19,6 @@ public class PlayerControllerSingle : MonoBehaviour
     private float mouseY;
     private float cameraRotation;
     private float rotationX = 0f;
-    private Rigidbody rigidBody;
-    private Transform objectTransform;
-    private Vector3 direction, position;
 
     public bool IsScreenBlocked
     {
@@ -48,13 +45,28 @@ public class PlayerControllerSingle : MonoBehaviour
             transform.Rotate(Vector3.up * mouseSpeed * Time.deltaTime * mouseX);
 
             rotationX += mouseY * mouseSpeed * Time.deltaTime;
-            rotationX = Mathf.Clamp(rotationX, -30, 30);
+            rotationX = Mathf.Clamp(rotationX, -50, 30);
             mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Panel.SetActive(!Panel.activeInHierarchy);
+
+            CursorMethod();
         }
+
+        if (ipad.GetComponent<IpadControllerSingle>().isUsed == true)
+        {
+            CursorMethod();
+        }
+    }
+
+    void CursorMethod()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

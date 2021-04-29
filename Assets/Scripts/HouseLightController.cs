@@ -18,7 +18,6 @@ public class HouseLightController : MonoBehaviour, IInteractable
             photonView = GetComponent<PhotonView>();
             photonView.RPC("Open", RpcTarget.All);
         }
-
     }
 
     [PunRPC]

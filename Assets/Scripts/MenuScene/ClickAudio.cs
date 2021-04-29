@@ -17,7 +17,7 @@ public class ClickAudio : MonoBehaviour
 
         if (textButton != null)
         {
-            if (textButton.text == "ClickSound")
+            if (textButton.text == "ClickSound" || textButton.text == " лик")
             {
                 if (text == "true")
                     PlayerPrefs.SetString("Click", "false");
@@ -25,7 +25,7 @@ public class ClickAudio : MonoBehaviour
                     PlayerPrefs.SetString("Click", "true");
             }
 
-            if (textButton.text == "BackSound")
+            if (textButton.text == "BackSound" || textButton.text == "‘он")
             {
                 text = PlayerPrefs.GetString("BG", "true");
 

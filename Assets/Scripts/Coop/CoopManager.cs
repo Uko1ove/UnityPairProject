@@ -8,6 +8,13 @@ using UnityEngine.UI;
 
 public class CoopManager : MonoBehaviourPunCallbacks
 {
+    GameObject Player;
+    [SerializeField] GameObject Cat;
+    [SerializeField] GameObject TV;
+
+    [SerializeField] UnityEngine.Video.VideoPlayer Out_0;
+    [SerializeField] UnityEngine.Video.VideoPlayer Out_1;
+
     public GameObject PlayerPref;
     public GameObject Panel;
     GameObject action;
@@ -25,6 +32,8 @@ public class CoopManager : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("player");
+
         //Звук из настроек меню
         AudioSource audioBG = gameObject.GetComponent<AudioSource>();
         soundBG = PlayerPrefs.GetString("BG", "true");
@@ -45,9 +54,38 @@ public class CoopManager : MonoBehaviourPunCallbacks
         }
     }
 
-    void Update()
+    private void Update()
     {
+        float Player_x = Player.transform.position.x;
+        float Cat_x = Cat.transform.position.x;
+        float TV_x = TV.transform.position.x;
 
+        float Player_z = Player.transform.position.z;
+        float Cat_z = Cat.transform.position.z;
+        float TV_z = TV.transform.position.z;
+
+        float func = Mathf.Sqrt(Mathf.Pow((Player.transform.position.x - Cat.transform.position.x), 2) +
+                                Mathf.Pow((Player.transform.position.z - Cat.transform.position.z), 2));
+        func = 0.2f - 0.2f * func / 80;
+
+        if (func > 0)
+            Cat.GetComponent<AudioSource>().volume = func;
+        else Cat.GetComponent<AudioSource>().volume = 0;
+
+        func = Mathf.Sqrt(Mathf.Pow((Player.transform.position.x - TV.transform.position.x), 2) +
+                          Mathf.Pow((Player.transform.position.z - TV.transform.position.z), 2));
+        func = 1f - 1f * func / 80;
+
+        if (func > 0)
+        {
+            Out_0.SetDirectAudioVolume(0, func);
+            Out_1.SetDirectAudioVolume(0, func);
+        }
+        else
+        {
+            Out_0.SetDirectAudioVolume(0, 0);
+            Out_1.SetDirectAudioVolume(0, 0);
+        }
     }
 
     public void Leave()

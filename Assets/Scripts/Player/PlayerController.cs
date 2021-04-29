@@ -38,7 +38,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (!photonView.IsMine) return;
-        if (photonView.IsMine) mainCamera.gameObject.SetActive(true);
+
+        mainCamera.gameObject.SetActive(true);
+        GetComponent<AudioListener>().enabled = true;
 
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
@@ -46,22 +48,38 @@ public class PlayerController : MonoBehaviour
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
 
-        if (ipad.GetComponent<IpadController>().isUsed == false)
+        Panel = GameObject.FindGameObjectWithTag("link_panel");
+        Panel = Panel.GetComponent<CoopManager>().Panel;
+
+        if (ipad.GetComponent<IpadController>().isUsed == false && Panel.activeInHierarchy == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed * vertical);
             transform.Rotate(Vector3.up * mouseSpeed * Time.deltaTime * mouseX);
 
             rotationX += mouseY * mouseSpeed * Time.deltaTime;
-            rotationX = Mathf.Clamp(rotationX, -30, 30);
+            rotationX = Mathf.Clamp(rotationX, -50, 30);
             mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Panel = GameObject.FindGameObjectWithTag("link_panel");
-            Panel = Panel.GetComponent<CoopManager>().Panel;
             Panel.SetActive(!Panel.activeInHierarchy);
+
+            CursorMethod();
         }
+
+        if (ipad.GetComponent<IpadController>().isUsed == true)
+        {
+            CursorMethod();
+        }
+    }
+
+    void CursorMethod()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

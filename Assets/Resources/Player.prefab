@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6164641080919988684}
   itemContainer: {fileID: 2773071055645809773}
-  rayDistance: 10
+  rayDistance: 15
 --- !u!114 &2773071055770124828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2443,6 +2443,7 @@ GameObject:
   - component: {fileID: 2139892681035271963}
   - component: {fileID: 7244719777628759369}
   - component: {fileID: 8965081444818500969}
+  - component: {fileID: 9077283990587852590}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -2579,6 +2580,14 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!81 &9077283990587852590
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164641080919988684}
+  m_Enabled: 0
 --- !u!1 &6166864569264746668
 GameObject:
   m_ObjectHideFlags: 0
