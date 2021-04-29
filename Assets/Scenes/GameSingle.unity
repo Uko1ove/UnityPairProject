@@ -8039,6 +8039,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d3b11e9cbe1573f419bc912dc423873b, type: 3}
   m_PrefabInstance: {fileID: 723986873}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2143285420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2143285420, guid: e5cecce21259b9a41b6404b86e9a33bb, type: 3}
+  m_PrefabInstance: {fileID: 7596834656177065188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &651317177515421098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4482784137014271480, guid: 1ecf49c3f03fbc44cbbcfa12f66335f8, type: 3}
@@ -8545,9 +8550,17 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 229167088}
+    - target: {fileID: 6558375937770598093, guid: 7673a2ae0fb015c4795402b051bfeb1c, type: 3}
+      propertyPath: activeObjects
+      value: 
+      objectReference: {fileID: 7655510814760187893}
+    - target: {fileID: 6558375937770598093, guid: 7673a2ae0fb015c4795402b051bfeb1c, type: 3}
+      propertyPath: itemContainer
+      value: 
+      objectReference: {fileID: 2143285420}
     - target: {fileID: 6558375937770598095, guid: 7673a2ae0fb015c4795402b051bfeb1c, type: 3}
       propertyPath: m_Name
-      value: smartphone
+      value: ipad
       objectReference: {fileID: 0}
     - target: {fileID: 6562015964342216289, guid: 7673a2ae0fb015c4795402b051bfeb1c, type: 3}
       propertyPath: m_RootOrder
@@ -8595,6 +8608,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7673a2ae0fb015c4795402b051bfeb1c, type: 3}
+--- !u!1 &5888328285833765867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6558375937770598095, guid: 7673a2ae0fb015c4795402b051bfeb1c, type: 3}
+  m_PrefabInstance: {fileID: 5888328285833765866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5954734489714698542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4801498991257012850, guid: 3dd6e7223d057d34ba65ef59c832b0bd, type: 3}
@@ -8785,6 +8803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8872445359487490675, guid: e5cecce21259b9a41b6404b86e9a33bb, type: 3}
+      propertyPath: ipad
+      value: 
+      objectReference: {fileID: 5888328285833765867}
     - target: {fileID: 8872445359487490675, guid: e5cecce21259b9a41b6404b86e9a33bb, type: 3}
       propertyPath: Panel
       value: 

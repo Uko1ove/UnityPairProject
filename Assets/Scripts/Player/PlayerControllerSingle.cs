@@ -8,7 +8,7 @@ public class PlayerControllerSingle : MonoBehaviour
 {
     [SerializeField] GameObject Panel; 
     public Camera mainCamera;
-    private GameObject smartphone;
+    [SerializeField] GameObject ipad;
 
     private float sliderValue;
     private const float playerSpeed = 10f;
@@ -22,23 +22,15 @@ public class PlayerControllerSingle : MonoBehaviour
     private Rigidbody rigidBody;
     private Transform objectTransform;
     private Vector3 direction, position;
-    public bool isUsingSmartphone;
 
     public bool IsScreenBlocked
     {
         get; private set;
     }
 
-
-
     void Start()
     {
-        smartphone = GameObject.FindGameObjectWithTag("ipad");
         IsScreenBlocked = true;
-        isUsingSmartphone = false;
-        rigidBody = GetComponent<Rigidbody>();
-        objectTransform = GetComponent<Transform>();
-        position = objectTransform.position;
     }
 
     void Update()
@@ -49,7 +41,7 @@ public class PlayerControllerSingle : MonoBehaviour
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
         
-        if (isUsingSmartphone == false && Panel.activeInHierarchy == false)
+        if (ipad.GetComponent<IpadControllerSingle>().isUsed == false && Panel.activeInHierarchy == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed * vertical);
@@ -58,17 +50,6 @@ public class PlayerControllerSingle : MonoBehaviour
             rotationX += mouseY * mouseSpeed * Time.deltaTime;
             rotationX = Mathf.Clamp(rotationX, -30, 30);
             mainCamera.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftControl) && isUsingSmartphone == true)
-        {
-            IsScreenBlocked = !IsScreenBlocked;
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftAlt) && isUsingSmartphone == true)
-        {
-            IsScreenBlocked = true;
-            isUsingSmartphone = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

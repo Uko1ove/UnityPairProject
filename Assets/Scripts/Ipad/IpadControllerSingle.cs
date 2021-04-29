@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class IpadControllerSingle : MonoBehaviour, IInteractable
 {
-    GameObject player;
+    [SerializeField] GameObject player;
     [SerializeField] GameObject screenOff;
     [SerializeField] GameObject screenOnLocked;
     [SerializeField] GameObject slider;
+    [SerializeField] GameObject activeObjects;
+    [SerializeField] GameObject itemContainer;
 
-    private GameObject itemContainer;
-    private bool isUsed;
+    public bool isUsed;
     private float sliderValue;
     private bool isScreenBlocked;
     private Vector3 ipadPosition;
@@ -24,55 +25,49 @@ public class IpadControllerSingle : MonoBehaviour, IInteractable
 
         transform.localPosition = new Vector3(0, 0, 0);
         transform.localRotation = Quaternion.identity;
-        itemContainer.transform.localPosition = new Vector3(0, 0, 0.2f);
-        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(90, 0, 180));
+        itemContainer.transform.localPosition = new Vector3(0, 1.65f, 0.35f);
+        itemContainer.transform.localRotation = Quaternion.Euler(new Vector3(110, 0, 180));
     }
 
-    private void Start()
+
+    void Start()
     {
-        player = GameObject.FindGameObjectWithTag("player");
         sliderValue = 0;
         isScreenBlocked = true;
         ipadPosition = transform.position;
         ipadRotation = transform.rotation;
         ipadScale = transform.localScale;
-        itemContainer = player.GetComponent<PlayerControllerSingle>().mainCamera.transform.GetChild(0).gameObject;
     }
 
     void Update()
     {
-        isUsed = player.GetComponent<PlayerControllerSingle>().isUsingSmartphone;
-        isScreenBlocked = player.GetComponent<PlayerControllerSingle>().IsScreenBlocked;
-        sliderValue = slider.GetComponent<Slider>().value;
-
-        if (isUsed)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && isUsed == true)
         {
-            screenOff.SetActive(isScreenBlocked);
-
-            if (sliderValue >= 0.85)
-            {
-                screenOnLocked.SetActive(false);
-            }
-            else
+            if (isScreenBlocked == false)
             {
                 screenOnLocked.SetActive(true);
-            }
-
-            if (isScreenBlocked == true)
-            {
-                screenOnLocked.SetActive(isScreenBlocked);
                 slider.GetComponent<Slider>().value = 0;
-            }
 
-        }
-        else
-        {
+            }
+            isScreenBlocked = !isScreenBlocked;
             screenOff.SetActive(isScreenBlocked);
-            screenOnLocked.SetActive(true);
-            transform.parent = null;
-            transform.position = ipadPosition;
-            transform.rotation = ipadRotation;
-            transform.localScale = ipadScale;
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftAlt) && isUsed == true)
+        {
+            PutIpad();
+        }
+    }
+
+    private void PutIpad()
+    {
+        transform.parent = activeObjects.transform;
+        transform.position = ipadPosition;
+        transform.rotation = ipadRotation;
+        transform.localScale = ipadScale;
+        isScreenBlocked = true;
+        isUsed = false;
+
+        screenOff.SetActive(isScreenBlocked);
     }
 }
