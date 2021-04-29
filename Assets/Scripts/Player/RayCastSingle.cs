@@ -38,7 +38,6 @@ public class RayCastSingle : MonoBehaviour
                 {
                     var interactComponent = hit.collider.GetComponent<IInteractable>();
                     interactComponent.Interact();
-                    //GameObject go1 = hit.collider.gameObject;
 
                     isUsingSmart = true;
                     player.GetComponent<PlayerControllerSingle>().isUsingSmartphone = isUsingSmart;
