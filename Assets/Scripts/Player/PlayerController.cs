@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float cameraRotation;
     private float rotationX = 0f;
     private PhotonView photonView;
+    bool esc;
 
     public bool IsScreenBlocked
     {
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         ipad = GameObject.FindGameObjectWithTag("ipad");
 
         IsScreenBlocked = true;
+        esc = false;
     }
 
     void Update()
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
 
-        if (ipad.GetComponent<IpadController>().isUsed == false)
+        if (ipad.GetComponent<IpadController>().isUsed == false && esc == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed * vertical);
@@ -69,6 +71,7 @@ public class PlayerController : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            esc = !esc;
         }
     }
 }
