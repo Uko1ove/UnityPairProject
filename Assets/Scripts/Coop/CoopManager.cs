@@ -13,6 +13,9 @@ public class CoopManager : MonoBehaviourPunCallbacks
     GameObject action;
     [SerializeField] Text wallText;
 
+    string soundBG;
+    float slider;
+
     string language;
 
     void Awake()
@@ -22,7 +25,14 @@ public class CoopManager : MonoBehaviourPunCallbacks
 
     private void Start()
     {
- 
+        //Звук из настроек меню
+        AudioSource audioBG = gameObject.GetComponent<AudioSource>();
+        soundBG = PlayerPrefs.GetString("BG", "true");
+        slider = PlayerPrefs.GetFloat("Slider", 1);
+        AudioListener.volume = slider;
+        if (soundBG == "false") audioBG.Stop();
+
+        //Локализация
         language = PlayerPrefs.GetString("local", "eng");
 
         if (language == "eng")
