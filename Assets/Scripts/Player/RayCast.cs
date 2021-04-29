@@ -23,9 +23,6 @@ public class RayCast : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.tag == "object")
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-
                 var interactComponent = hit.collider.GetComponent<IInteractable>();
                 interactComponent.Interact();
             }
