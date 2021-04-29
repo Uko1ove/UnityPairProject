@@ -64,6 +64,9 @@ public class PlayerController : MonoBehaviour
             Panel = GameObject.FindGameObjectWithTag("link_panel");
             Panel = Panel.GetComponent<CoopManager>().Panel;
             Panel.SetActive(!Panel.activeInHierarchy);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
