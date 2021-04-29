@@ -19,8 +19,7 @@ public class OpenSafeSingle : MonoBehaviour, IInteractable
 
         if (anim1.enabled == false)
 
-            //исправить на 1482
-            if (num1.text == "1" && num2.text == "0" && num3.text == "0" && num4.text == "0")
+            if (num1.text == "1" && num2.text == "4" && num3.text == "8" && num4.text == "2")
             {
                 anim1.enabled = true;
                 audio1.Play();
