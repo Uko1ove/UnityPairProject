@@ -14,7 +14,6 @@ public class CoopManager : MonoBehaviourPunCallbacks
     [SerializeField] Text wallText;
     [SerializeField] GameObject Cat;
 
-
     string soundBG;
     float slider;
 
