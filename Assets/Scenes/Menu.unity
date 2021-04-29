@@ -188,25 +188,6 @@ MonoBehaviour:
   audioBG: {fileID: 1115959593}
   ContinueVisible: {fileID: 984528145}
   Slider: {fileID: 1212205723}
-  ContinueButton: {fileID: 2024760886}
-  NewGameButton: {fileID: 375489600}
-  CoopButton: {fileID: 1871992501}
-  ServerButton: {fileID: 1524249684}
-  ClientButton: {fileID: 1480859996}
-  SettingsMenuButton: {fileID: 1473813543}
-  ExitButton: {fileID: 381620089}
-  LanguageButton: {fileID: 803407239}
-  EngButton: {fileID: 1305731928}
-  RusButton: {fileID: 160825266}
-  BackLangButton: {fileID: 1058724709}
-  SoundButton: {fileID: 877983646}
-  BGButton: {fileID: 1158924117}
-  ClickButton: {fileID: 1675100313}
-  BackSoundButton: {fileID: 316894880}
-  ResetButton: {fileID: 2147241389}
-  YesButton: {fileID: 1471615316}
-  NoButton: {fileID: 656484152}
-  BackSettingsButton: {fileID: 1417218733}
 --- !u!1 &51305701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,7 +1954,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
