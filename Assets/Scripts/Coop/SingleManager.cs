@@ -19,6 +19,7 @@ public class SingleManager : MonoBehaviour
     [SerializeField] Text SaveText;
     [SerializeField] Text ReturnText;
     [SerializeField] Text ExitText;
+    [SerializeField] Text DiscriptText;
 
     string soundBG;
     float slider;
@@ -63,6 +64,7 @@ public class SingleManager : MonoBehaviour
             SaveText.text = "Save";
             ReturnText.text = "Return";
             ExitText.text = "Exit";
+            DiscriptText.text = "Mouse LClick - Use\nLCtr - Unlock Ipad\nLAlt - Take / Put Ipad";
         }
         else
         {
@@ -70,6 +72,7 @@ public class SingleManager : MonoBehaviour
             SaveText.text = "Сохранить";
             ReturnText.text = "Вернуться";
             ExitText.text = "Выход";
+            DiscriptText.text = "Mouse LClick - Использ\nLCtr - Разблок Ipad\nLAlt - Взять/Полож Ipad";
         }
     }
 

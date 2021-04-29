@@ -5669,6 +5669,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8885685421760582648, guid: 058de653643687c4db059ed499c54862, type: 3}
   m_PrefabInstance: {fileID: 8887182264387282858}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1392472812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2711423135238486581, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+  m_PrefabInstance: {fileID: 1482035097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1399239912
 GameObject:
   m_ObjectHideFlags: 0
@@ -6165,6 +6176,18 @@ PrefabInstance:
     - target: {fileID: 2047605546930783037, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711423135238486581, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711423135238486581, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711423135238486581, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4764727666119890233, guid: f7d41c3989d1a804ea93d9019e690113, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8556,6 +8579,7 @@ MonoBehaviour:
   SaveText: {fileID: 1790872054}
   ReturnText: {fileID: 1517382666}
   ExitText: {fileID: 1682092250}
+  DiscriptText: {fileID: 1392472812}
 --- !u!82 &1973788426
 AudioSource:
   m_ObjectHideFlags: 0

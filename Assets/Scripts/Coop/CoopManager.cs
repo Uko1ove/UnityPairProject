@@ -22,6 +22,7 @@ public class CoopManager : MonoBehaviourPunCallbacks
     [SerializeField] Text WallText;
     [SerializeField] Text ReturnText;
     [SerializeField] Text ExitText;
+    [SerializeField] Text DiscriptText;
 
     string soundBG;
     float slider;
@@ -52,12 +53,14 @@ public class CoopManager : MonoBehaviourPunCallbacks
             WallText.text = "The chamber of secrets has been opened. Enemies of the heir... Beware.";
             ReturnText.text = "Return";
             ExitText.text = "Exit";
+            DiscriptText.text = "Mouse LClick - Use\nLCtr - Unlock Ipad\nLAlt - Take / Put Ipad";
         }
         else
         {
             WallText.text = "Тайная комната снова открыта. Трепещите враги наследника.";
             ReturnText.text = "Вернуться";
             ExitText.text = "Выход";
+            DiscriptText.text = "Mouse LClick - Использ\nLCtr - Разблок Ipad\nLAlt - Взять/Полож Ipad";
         }
     }
 
