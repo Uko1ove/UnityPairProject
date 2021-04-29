@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     GameObject Panel;
     public Camera mainCamera;
-    private GameObject smartphone;
+    private GameObject ipad;
 
     private float sliderValue;
     private const float playerSpeed = 10f;
@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private float mouseY;
     private float cameraRotation;
     private float rotationX = 0f;
-    public bool isUsingSmartphone;
     private PhotonView photonView;
 
     public bool IsScreenBlocked
@@ -31,10 +30,9 @@ public class PlayerController : MonoBehaviour
     {
         photonView = GetComponent<PhotonView>();
 
-        smartphone = GameObject.FindGameObjectWithTag("ipad");
+        ipad = GameObject.FindGameObjectWithTag("ipad");
 
         IsScreenBlocked = true;
-        isUsingSmartphone = false;
     }
 
     void Update()
@@ -48,7 +46,7 @@ public class PlayerController : MonoBehaviour
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
 
-        if (isUsingSmartphone == false)
+        if (ipad.GetComponent<IpadController>().isUsed == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed * vertical);

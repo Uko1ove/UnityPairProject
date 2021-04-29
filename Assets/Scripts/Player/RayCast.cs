@@ -13,7 +13,6 @@ public class RayCast : MonoBehaviour
 
     void Update()
     {
-        
         cam = GetComponent<Camera>();
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(transform.position, ray.direction * rayDistance);
@@ -30,15 +29,12 @@ public class RayCast : MonoBehaviour
             
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.name == "ipad")
             {
-                bool iPadController = hit.collider.GetComponent<IpadController>().isUsed;
-
-                if (iPadController == false)
+                if (hit.collider.GetComponent<IpadController>().isUsed == false)
                 {
                     var interactComponent = hit.collider.GetComponent<IInteractable>();
                     interactComponent.Interact();
 
                     hit.collider.GetComponent<IpadController>().isUsed = true;
-                    player.GetComponent<PlayerController>().isUsingSmartphone = true;
                 }
             }
         }

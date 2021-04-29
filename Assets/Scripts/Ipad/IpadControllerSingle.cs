@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class IpadControllerSingle : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameObject player;
     [SerializeField] GameObject screenOff;
     [SerializeField] GameObject screenOnLocked;
     [SerializeField] GameObject slider;
@@ -13,7 +12,6 @@ public class IpadControllerSingle : MonoBehaviour, IInteractable
     [SerializeField] GameObject itemContainer;
 
     public bool isUsed;
-    private float sliderValue;
     private bool isScreenBlocked;
     private Vector3 ipadPosition;
     private Quaternion ipadRotation;
@@ -32,7 +30,7 @@ public class IpadControllerSingle : MonoBehaviour, IInteractable
 
     void Start()
     {
-        sliderValue = 0;
+        slider.GetComponent<Slider>().value = 0;
         isScreenBlocked = true;
         ipadPosition = transform.position;
         ipadRotation = transform.rotation;

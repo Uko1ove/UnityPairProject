@@ -2528,7 +2528,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2773071055770124830}
-  isUsingSmartphone: 0
 --- !u!114 &2139892681035271963
 MonoBehaviour:
   m_ObjectHideFlags: 0

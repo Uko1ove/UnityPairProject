@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class IpadController : MonoBehaviour, IInteractable
 {
-    GameObject player;
     [SerializeField] GameObject screenOff;
     [SerializeField] GameObject screenOnLocked;
     [SerializeField] GameObject slider;
@@ -44,13 +43,13 @@ public class IpadController : MonoBehaviour, IInteractable
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("player");
+        itemContainer = GameObject.FindGameObjectWithTag("item");
+
         sliderValue = 0;
         isScreenBlocked = true;
         ipadPosition = transform.position;
         ipadRotation = transform.rotation;
         ipadScale = transform.localScale;
-        itemContainer = GameObject.FindGameObjectWithTag("item");
     }
 
     void Update()
@@ -82,7 +81,6 @@ public class IpadController : MonoBehaviour, IInteractable
         transform.localScale = ipadScale;
         isScreenBlocked = true;
         isUsed = false;
-        player.GetComponent<PlayerController>().isUsingSmartphone = false;
         screenOff.SetActive(isScreenBlocked);
     }
 }
