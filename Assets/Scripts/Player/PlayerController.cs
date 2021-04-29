@@ -38,7 +38,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (!photonView.IsMine) return;
-        if (photonView.IsMine) mainCamera.gameObject.SetActive(true);
+
+        mainCamera.gameObject.SetActive(true);
+        GetComponent<AudioListener>().enabled = true;
 
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
