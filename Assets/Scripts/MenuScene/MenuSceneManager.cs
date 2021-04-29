@@ -39,5 +39,8 @@ public class MenuSceneManager : ChangeLocalization
         {
             LocalizeToRus();
         }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
