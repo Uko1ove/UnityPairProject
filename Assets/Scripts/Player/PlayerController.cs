@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private float cameraRotation;
     private float rotationX = 0f;
     private PhotonView photonView;
-    bool esc;
 
     public bool IsScreenBlocked
     {
@@ -34,7 +33,6 @@ public class PlayerController : MonoBehaviour
         ipad = GameObject.FindGameObjectWithTag("ipad");
 
         IsScreenBlocked = true;
-        esc = false;
     }
 
     void Update()
@@ -50,7 +48,10 @@ public class PlayerController : MonoBehaviour
         mouseY = Input.GetAxis("Mouse Y");
         cameraRotation = mainCamera.transform.rotation.x;
 
-        if (ipad.GetComponent<IpadController>().isUsed == false && esc == false)
+        Panel = GameObject.FindGameObjectWithTag("link_panel");
+        Panel = Panel.GetComponent<CoopManager>().Panel;
+
+        if (ipad.GetComponent<IpadController>().isUsed == false && Panel.activeInHierarchy == false)
         {
             transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontal);
             transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed * vertical);
@@ -65,13 +66,20 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Panel = GameObject.FindGameObjectWithTag("link_panel");
-            Panel = Panel.GetComponent<CoopManager>().Panel;
             Panel.SetActive(!Panel.activeInHierarchy);
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            esc = !esc;
+            CursorMethod();
         }
+
+        if (ipad.GetComponent<IpadController>().isUsed == true)
+        {
+            CursorMethod();
+        }
+    }
+
+    void CursorMethod()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

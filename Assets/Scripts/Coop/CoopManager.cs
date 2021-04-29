@@ -21,7 +21,8 @@ public class CoopManager : MonoBehaviourPunCallbacks
 
     void Awake()
     {
-        PhotonNetwork.Instantiate(PlayerPref.name, new Vector3(5,-0.05f,-26), Quaternion.identity );
+        //PhotonNetwork.Instantiate(PlayerPref.name, new Vector3(5,-0.05f,-26), Quaternion.identity );
+        PhotonNetwork.Instantiate(PlayerPref.name, new Vector3(-34, -0.01f, 11), Quaternion.identity);
     }
 
     private void Start()

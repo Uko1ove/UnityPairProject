@@ -19,9 +19,6 @@ public class PlayerControllerSingle : MonoBehaviour
     private float mouseY;
     private float cameraRotation;
     private float rotationX = 0f;
-    private Rigidbody rigidBody;
-    private Transform objectTransform;
-    private Vector3 direction, position;
 
     public bool IsScreenBlocked
     {
@@ -58,8 +55,18 @@ public class PlayerControllerSingle : MonoBehaviour
         {
             Panel.SetActive(!Panel.activeInHierarchy);
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            CursorMethod();
         }
+
+        if (ipad.GetComponent<IpadControllerSingle>().isUsed == true)
+        {
+            CursorMethod();
+        }
+    }
+
+    void CursorMethod()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

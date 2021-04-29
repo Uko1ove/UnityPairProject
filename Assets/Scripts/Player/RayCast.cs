@@ -19,10 +19,13 @@ public class RayCast : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0) )
         {
             if (Physics.Raycast(ray, out hit, rayDistance) && hit.collider.gameObject.tag == "object")
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
                 var interactComponent = hit.collider.GetComponent<IInteractable>();
                 interactComponent.Interact();
             }
@@ -33,7 +36,6 @@ public class RayCast : MonoBehaviour
                 {
                     var interactComponent = hit.collider.GetComponent<IInteractable>();
                     interactComponent.Interact();
-                    hit.collider.GetComponent<IpadController>().Camera = gameObject.GetComponent<Camera>();
 
                     hit.collider.GetComponent<IpadController>().isUsed = true;
                 }
