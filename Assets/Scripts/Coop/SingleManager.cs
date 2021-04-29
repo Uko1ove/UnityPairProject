@@ -84,7 +84,7 @@ public class SingleManager : MonoBehaviour
         func = Mathf.Sqrt(Mathf.Pow((Player.transform.position.x - TV.transform.position.x), 2) +
                           Mathf.Pow((Player.transform.position.z - TV.transform.position.z), 2));
         func = 1f - 1f * func / 80;
-        Debug.Log(func);
+
         if (func > 0)
         {
             Out_0.SetDirectAudioVolume(0, func);

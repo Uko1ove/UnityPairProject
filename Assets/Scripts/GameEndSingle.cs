@@ -1,14 +1,18 @@
 using System.Collections;
-using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class GameEnd : MonoBehaviour
+public class GameEndSingle : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "player")
-            PhotonNetwork.LeaveRoom();
+        {
+            SceneManager.LoadScene("Menu");
+        }
+
+        PlayerPrefs.SetString("player", "5 -26 0");
+        PlayerPrefs.SetString("invent", "00000");
     }
 }
